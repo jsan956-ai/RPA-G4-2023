@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1409,2471</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1409,2595</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>revenue_scraping_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -81,7 +81,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="revenue_scraping" sap:VirtualizedContainerService.HintSize="518,2406" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="revenue_scraping" sap:VirtualizedContainerService.HintSize="518,2530" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="browser_data" />
       <Variable x:TypeArguments="s:String[]" Default="[new String(4) {}]" Name="revenues_text" />
@@ -100,7 +100,7 @@
         <InArgument x:TypeArguments="s:Int64[]">[new Int64(4) {}]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="476,1406" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="476,1530" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <Sequence.Variables>
         <Variable x:TypeArguments="ui:GenericValue" Name="Span" />
         <Variable x:TypeArguments="ui:GenericValue" Name="Span1" />
@@ -112,13 +112,13 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'Home BoxO Page'" sap:VirtualizedContainerService.HintSize="434,1314" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="79d3128619f86335d98bf4fac62c6444" Selector="&lt;html app='msedge.exe' title='Home - Box Office Mojo' /&gt;">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'Home BoxO Page'" sap:VirtualizedContainerService.HintSize="434,1438" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="79d3128619f86335d98bf4fac62c6444" Selector="&lt;html app='msedge.exe' title='Home - Box Office Mojo' /&gt;">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1168" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1292" sap2010:WorkflowViewState.IdRef="Sequence_14">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -142,21 +142,21 @@
                   </ui:Target>
                 </ui:SendHotkey.Target>
               </ui:SendHotkey>
-              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /title/tt1375666/?re...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /title/tt0120338/?re...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                 <ui:Click.CursorPosition>
-                  <ui:CursorPosition OffsetX="28" OffsetY="11" Position="TopLeft" />
+                  <ui:CursorPosition OffsetX="19" OffsetY="12" Position="TopLeft" />
                 </ui:Click.CursorPosition>
                 <ui:Click.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b0021599-ac4e-4f3e-80a5-6931c4f315dd" InformativeScreenshot="5dba288aa934699a48a7279d374b316d" Selector="&lt;webctrl aaname='Inception' parentid='a-page' tag='A' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7afbe353-8f3a-466b-8f4b-8ed954ddbb1e" InformativeScreenshot="2ceaee51c8696592b9b007161c00c286" Selector="&lt;html app='msedge.exe' title='Search Results - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='A' isleaf='1' idx='11' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
                   </ui:Target>
                 </ui:Click.Target>
               </ui:Click>
-              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_10">
+              <ui:GetValue ContinueOnError="True" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_17">
                 <ui:GetValue.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="275ac903-9b5f-4074-9887-2eb634d600b3" InformativeScreenshot="d61faa5fe288d4a1bb14016e845f4fde" Selector="&lt;webctrl aaname='$160,000,000' parentid='a-page' tag='SPAN' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="43c5db5e-3daa-464a-81e8-9bffdab6746e" InformativeScreenshot="d61faa5fe288d4a1bb14016e845f4fde" Selector="&lt;html app='msedge.exe' omit:title='Inception - Box Office Mojo' /&gt;&lt;webctrl aaname='Budget' parentid='a-page' tag='SPAN' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='a-page' tag='SPAN' idx='3' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
@@ -166,9 +166,10 @@
                   <OutArgument x:TypeArguments="x:String">[revenues_text(0)]</OutArgument>
                 </ui:GetValue.Value>
               </ui:GetValue>
-              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_11">
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[revenues_text(0)]" />
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_14">
                 <ui:GetValue.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0ee57b11-f1e3-42ff-a510-8a14746845cd" InformativeScreenshot="f3da10bb66d1b5ab31768fb56d96885e" Selector="&lt;webctrl aaname='$292,587,330' parentid='a-page' tag='SPAN' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="43c5db5e-3daa-464a-81e8-9bffdab6746e" InformativeScreenshot="83db4967b611bce737569019825082c7" Selector="&lt;html app='msedge.exe' omit:title='Fast X - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='SPAN' class='money' isleaf='1' idx='1' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
@@ -178,9 +179,9 @@
                   <OutArgument x:TypeArguments="x:String">[revenues_text(1)]</OutArgument>
                 </ui:GetValue.Value>
               </ui:GetValue>
-              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_12">
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_15">
                 <ui:GetValue.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8fc56852-35c6-4634-b432-cff2ab2c598f" InformativeScreenshot="cd52f5ee67f98ee01c96703e727248c5" Selector="&lt;webctrl aaname='$544,599,280' parentid='a-page' tag='SPAN' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="63af11ae-3ade-459b-acc4-e7f39a41cfaf" InformativeScreenshot="45b11297b709c555dbf6bec063d48413" Selector="&lt;html app='msedge.exe' omit:title='Fast X - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='SPAN' class='money' isleaf='1' idx='2' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
@@ -190,9 +191,9 @@
                   <OutArgument x:TypeArguments="x:String">[revenues_text(2)]</OutArgument>
                 </ui:GetValue.Value>
               </ui:GetValue>
-              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_13">
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_16">
                 <ui:GetValue.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1db1e181-b647-469b-afa1-447cbb2ce47e" InformativeScreenshot="7506625ea815aea4d772eb6d0da86576" Selector="&lt;webctrl aaname='$837,186,610' parentid='a-page' tag='SPAN' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6bcaa6b6-4df9-4839-acc5-04a0ad508380" InformativeScreenshot="12f1d37e30e758c74582a6c3bb35e56f" Selector="&lt;html app='msedge.exe' omit:title='Fast X - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='SPAN' class='money' isleaf='1' idx='3' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>

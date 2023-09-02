@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>934,615</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1409,1187</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>dollar2int_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -73,7 +73,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="dollar = Strings.Replace(dollar, &quot;$&quot;, &quot;&quot;)&#xA;dollar = Strings.Replace(dollar, &quot;,&quot;, &quot;&quot;)&#xA;int_value = CLng(dollar)" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="436,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+    <ui:InvokeCode Code="dollar = Strings.Replace(dollar, &quot;$&quot;, &quot;&quot;)&#xA;dollar = Strings.Replace(dollar, &quot;,&quot;, &quot;&quot;)&#xA;int_value = CLng(dollar)" ContinueOnError="False" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="436,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="x:Int64" x:Key="int_value">[int_value]</InOutArgument>
         <InOutArgument x:TypeArguments="x:String" x:Key="dollar">[dollar]</InOutArgument>
