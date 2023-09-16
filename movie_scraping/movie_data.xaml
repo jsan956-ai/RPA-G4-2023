@@ -65,7 +65,7 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="movie_data" sap:VirtualizedContainerService.HintSize="518,528" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="movie_data" sap:VirtualizedContainerService.HintSize="518,771" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractedMovieData" />
       <Variable x:TypeArguments="x:String" Name="OutputMovieData" />
@@ -107,5 +107,7 @@
         </ui:BrowserScope.Body>
       </ui:BrowserScope>
     </Sequence>
+    <ui:OutputDataTable DataTable="[ExtractedMovieData]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="476,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[OutputMovieData]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="476,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[OutputMovieData]" />
   </Sequence>
 </Activity>
