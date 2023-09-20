@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="imdb_scraping" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1439,2361" sap2010:WorkflowViewState.IdRef="imdb_scraping_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="imdb_scraping" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1439,2535" sap2010:WorkflowViewState.IdRef="imdb_scraping_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -51,7 +51,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="set_filters" sap:VirtualizedContainerService.HintSize="519,2296" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="set_filters" sap:VirtualizedContainerService.HintSize="519,2470" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -66,19 +66,19 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="477,2048" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="477,2222" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'IMDbAdvan Page'" sap:VirtualizedContainerService.HintSize="435,1956" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="56c7b911f6042ee971c84cd5d32a7d57" Selector="&lt;html app='msedge.exe' title='IMDb: Advanced Title Search - IMDb' /&gt;">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'IMDbAdvan Page'" sap:VirtualizedContainerService.HintSize="435,2130" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="56c7b911f6042ee971c84cd5d32a7d57" Selector="&lt;html app='msedge.exe' title='IMDb: Advanced Title Search - IMDb' /&gt;">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="401,1810" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="401,1984" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -285,6 +285,42 @@
                   </ui:Target>
                 </ui:Check.Target>
               </ui:Check>
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="Popularity Descending">
+                <ui:SelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="32">
+                    <x:String>Popularity Ascending</x:String>
+                    <x:String>Popularity Descending</x:String>
+                    <x:String>A-Z Ascending</x:String>
+                    <x:String>A-Z Descending</x:String>
+                    <x:String>User Rating Ascending</x:String>
+                    <x:String>User Rating Descending</x:String>
+                    <x:String>Num Votes Ascending</x:String>
+                    <x:String>Num Votes Descending</x:String>
+                    <x:String>US Box Office Ascending</x:String>
+                    <x:String>US Box Office Descending</x:String>
+                    <x:String>Runtime Ascending</x:String>
+                    <x:String>Runtime Descending</x:String>
+                    <x:String>Year Ascending</x:String>
+                    <x:String>Year Descending</x:String>
+                    <x:String>Release Date Ascending</x:String>
+                    <x:String>Release Date Descending</x:String>
+                    <x:String>Your rating (High to Low)</x:String>
+                    <x:String>Your rating (Low to High)</x:String>
+                    <x:String>Date of your rating (New to Old)</x:String>
+                    <x:String>Date of your rating (Old to New)</x:String>
+                  </scg:List>
+                </ui:SelectItem.Items>
+                <ui:SelectItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8666a244-54bf-4869-ba46-35cdb8d47a31" InformativeScreenshot="036ec9c25b0f19d71a55c4204aa05997" Selector="&lt;webctrl name='sort' tag='SELECT' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:SelectItem.Target>
+              </ui:SelectItem>
               <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition OffsetX="48" OffsetY="16" Position="TopLeft" />
