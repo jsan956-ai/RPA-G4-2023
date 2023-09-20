@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="imdb_scraping" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1439,2535" sap2010:WorkflowViewState.IdRef="imdb_scraping_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="imdb_scraping" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1439,2389" sap2010:WorkflowViewState.IdRef="imdb_scraping_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -51,7 +51,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="set_filters" sap:VirtualizedContainerService.HintSize="519,2470" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="set_filters" sap:VirtualizedContainerService.HintSize="519,2324" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -66,73 +66,70 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="477,2222" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="477,2076" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'IMDbAdvan Page'" sap:VirtualizedContainerService.HintSize="435,2130" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="56c7b911f6042ee971c84cd5d32a7d57" Selector="&lt;html app='msedge.exe' title='IMDb: Advanced Title Search - IMDb' /&gt;">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'IMDbAdvan Page'" sap:VirtualizedContainerService.HintSize="435,1984" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="aa077e9612e46f1dec37860400882424" Selector="&lt;html app='msedge.exe' title='IMDb: Advanced Title Search - IMDb' /&gt;">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="401,1984" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="401,1838" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  title_type-1'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_1">
+              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  title_type-1'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_6">
                 <ui:Check.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6df4f1ef-60ee-4a81-a697-7399f32cd59f" InformativeScreenshot="f629894b4c205cee460f05df21ec3967" Selector="&lt;webctrl id='title_type-1' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6b4f5c64-beac-4e5c-bc9e-c71fa907bd83" InformativeScreenshot="d9c008a175654813f1f2388f38f30446" Selector="&lt;webctrl id='title_type-1' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
                   </ui:Target>
                 </ui:Check.Target>
               </ui:Check>
-              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  title_type-2'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_2">
+              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  title_type-2'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_7">
                 <ui:Check.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7dc2851a-3231-4bce-937e-5769bbad85f7" InformativeScreenshot="5967c79458c7a5b758f13f071b18be6f" Selector="&lt;webctrl id='title_type-2' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="167e59d3-f5d3-4dbd-ae86-3284968e6600" InformativeScreenshot="5967c79458c7a5b758f13f071b18be6f" Selector="&lt;webctrl id='title_type-2' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
                   </ui:Target>
                 </ui:Check.Target>
               </ui:Check>
-              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  title_type-9'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_3">
+              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  title_type-5'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_8">
                 <ui:Check.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c5144fb7-4661-487e-bb2d-5d712f6e49e1" InformativeScreenshot="eb5a8258ab9dd724d0ce5a18af44f479" Selector="&lt;webctrl id='title_type-9' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="38c35150-5052-41e8-bbe9-e6b5cc676646" InformativeScreenshot="fab1e8becd95cd366a40e37f4da69be3" Selector="&lt;webctrl id='title_type-5' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
                   </ui:Target>
                 </ui:Check.Target>
               </ui:Check>
-              <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT'" sap:VirtualizedContainerService.HintSize="359,154" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="2003-01-01">
+              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  title_type-9'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_9">
+                <ui:Check.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f960485d-3827-4319-8f5c-5fc253e03ab9" InformativeScreenshot="7198c4c7785439c474c39a81c40c79f8" Selector="&lt;webctrl id='title_type-9' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:Check.Target>
+              </ui:Check>
+              <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT'" sap:VirtualizedContainerService.HintSize="359,154" sap2010:WorkflowViewState.IdRef="SetValue_3" Text="2003-01-01">
                 <ui:SetValue.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="08df4b46-9fd7-4123-a26e-4faaedbba878" InformativeScreenshot="3502ccf7a46c89dffbced37e551efcc6" Selector="&lt;webctrl name='release_date-min' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2a6d33fa-bdbb-4925-8d30-cb4e378c0f23" InformativeScreenshot="3502ccf7a46c89dffbced37e551efcc6" Selector="&lt;webctrl name='release_date-min' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
                   </ui:Target>
                 </ui:SetValue.Target>
               </ui:SetValue>
-              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SELECT'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
-                <ui:Click.CursorPosition>
-                  <ui:CursorPosition OffsetX="38" OffsetY="9" Position="TopLeft" />
-                </ui:Click.CursorPosition>
-                <ui:Click.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="50c04cb8-5b90-4624-9cb9-749fc02abcec" InformativeScreenshot="2db3de1858e6b8ae278780fe0d6f2f72" Selector="&lt;webctrl tag='SELECT' /&gt;" WaitForReady="COMPLETE">
-                    <ui:Target.TimeoutMS>
-                      <InArgument x:TypeArguments="x:Int32" />
-                    </ui:Target.TimeoutMS>
-                  </ui:Target>
-                </ui:Click.Target>
-              </ui:Click>
-              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="7.5">
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_4" Item="7.5">
                 <ui:SelectItem.Items>
                   <scg:List x:TypeArguments="x:String" Capacity="50">
                     <x:String>-</x:String>
@@ -188,14 +185,14 @@
                   </scg:List>
                 </ui:SelectItem.Items>
                 <ui:SelectItem.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a94479fc-b514-4392-b8a4-e670f228e4be" InformativeScreenshot="9f529461fec7253ee4d2db04a8244b98" Selector="&lt;webctrl tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b5b3e0e8-5a88-4841-9f36-77f1eeb7baa0" InformativeScreenshot="2db3de1858e6b8ae278780fe0d6f2f72" Selector="&lt;webctrl tag='SELECT' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
                   </ui:Target>
                 </ui:SelectItem.Target>
               </ui:SelectItem>
-              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="10">
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_5" Item="10">
                 <ui:SelectItem.Items>
                   <scg:List x:TypeArguments="x:String" Capacity="50">
                     <x:String>1.0</x:String>
@@ -251,41 +248,32 @@
                   </scg:List>
                 </ui:SelectItem.Items>
                 <ui:SelectItem.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="35b27ffb-e812-43ce-a55b-b67fb6383d1c" InformativeScreenshot="0ae70f9ca49542196687909cc3dc3588" Selector="&lt;webctrl name='user_rating-max' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="16306045-146a-44d9-8e0e-abc9980fffcf" InformativeScreenshot="0ae70f9ca49542196687909cc3dc3588" Selector="&lt;webctrl name='user_rating-max' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
                   </ui:Target>
                 </ui:SelectItem.Target>
               </ui:SelectItem>
-              <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT'" sap:VirtualizedContainerService.HintSize="359,154" sap2010:WorkflowViewState.IdRef="SetValue_2" Text="50000">
+              <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT'" sap:VirtualizedContainerService.HintSize="359,154" sap2010:WorkflowViewState.IdRef="SetValue_4" Text="50000">
                 <ui:SetValue.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="47bedb05-f2a3-419b-a406-955724dcc90a" InformativeScreenshot="0f46c8f99a2c27fd551e8a795fcf228b" Selector="&lt;webctrl name='num_votes-min' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bbacaedc-23b3-4461-b40d-03d25d43b51e" InformativeScreenshot="0f46c8f99a2c27fd551e8a795fcf228b" Selector="&lt;webctrl name='num_votes-min' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
                   </ui:Target>
                 </ui:SetValue.Target>
               </ui:SetValue>
-              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  genres-1'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_4">
+              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  genres-1'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_10">
                 <ui:Check.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="965313ef-588e-41aa-8339-bb520d267ee1" InformativeScreenshot="d127eb65c4f568210877ea0f9be1e351" Selector="&lt;webctrl id='genres-1' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="42b3c8c7-d383-42a6-88a5-d7a5ad7262a3" InformativeScreenshot="2e3161300689ad45eda1867cd215b73c" Selector="&lt;webctrl id='genres-1' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
                   </ui:Target>
                 </ui:Check.Target>
               </ui:Check>
-              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  groups-1'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_5">
-                <ui:Check.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c944ec63-410b-4d62-8049-b5f62f9776dd" InformativeScreenshot="82ed7acf4d734271cffbe3f22ad4a119" Selector="&lt;webctrl id='groups-1' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
-                    <ui:Target.TimeoutMS>
-                      <InArgument x:TypeArguments="x:Int32" />
-                    </ui:Target.TimeoutMS>
-                  </ui:Target>
-                </ui:Check.Target>
-              </ui:Check>
-              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="Popularity Descending">
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_6" Item="User Rating Descending">
                 <ui:SelectItem.Items>
                   <scg:List x:TypeArguments="x:String" Capacity="32">
                     <x:String>Popularity Ascending</x:String>
@@ -311,22 +299,19 @@
                   </scg:List>
                 </ui:SelectItem.Items>
                 <ui:SelectItem.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8666a244-54bf-4869-ba46-35cdb8d47a31" InformativeScreenshot="036ec9c25b0f19d71a55c4204aa05997" Selector="&lt;webctrl name='sort' tag='SELECT' /&gt;">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="601f5378-dfc8-4404-b73b-0d810261dadc" InformativeScreenshot="7cb20e02a6bbe6d05ca596e7c2f43951" Selector="&lt;webctrl name='sort' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
-                    <ui:Target.WaitForReady>
-                      <InArgument x:TypeArguments="ui:WaitForReady" />
-                    </ui:Target.WaitForReady>
                   </ui:Target>
                 </ui:SelectItem.Target>
               </ui:SelectItem>
-              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                 <ui:Click.CursorPosition>
-                  <ui:CursorPosition OffsetX="48" OffsetY="16" Position="TopLeft" />
+                  <ui:CursorPosition OffsetX="39" OffsetY="14" Position="TopLeft" />
                 </ui:Click.CursorPosition>
                 <ui:Click.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ded17dfb-06ac-40b0-b1c3-091ff7922e64" InformativeScreenshot="72356ab8208d6d80424e7d84f6968642" Selector="&lt;webctrl parentid='main' tag='BUTTON' type='submit' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="80212986-ebd4-44c4-95c7-68d7e6088c1c" InformativeScreenshot="3e7eeecac772141910dfdd280e497688" Selector="&lt;webctrl parentid='main' tag='BUTTON' type='submit' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
