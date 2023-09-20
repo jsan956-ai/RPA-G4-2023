@@ -1,0 +1,306 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="imdb_scraping" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1439,2361" sap2010:WorkflowViewState.IdRef="imdb_scraping_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="set_filters" sap:VirtualizedContainerService.HintSize="519,2296" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="477,116" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://www.imdb.com/search/title/">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="477,2048" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'IMDbAdvan Page'" sap:VirtualizedContainerService.HintSize="435,1956" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="56c7b911f6042ee971c84cd5d32a7d57" Selector="&lt;html app='msedge.exe' title='IMDb: Advanced Title Search - IMDb' /&gt;">
+        <ui:BrowserScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="401,1810" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  title_type-1'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_1">
+                <ui:Check.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6df4f1ef-60ee-4a81-a697-7399f32cd59f" InformativeScreenshot="f629894b4c205cee460f05df21ec3967" Selector="&lt;webctrl id='title_type-1' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:Check.Target>
+              </ui:Check>
+              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  title_type-2'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_2">
+                <ui:Check.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7dc2851a-3231-4bce-937e-5769bbad85f7" InformativeScreenshot="5967c79458c7a5b758f13f071b18be6f" Selector="&lt;webctrl id='title_type-2' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:Check.Target>
+              </ui:Check>
+              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  title_type-9'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_3">
+                <ui:Check.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c5144fb7-4661-487e-bb2d-5d712f6e49e1" InformativeScreenshot="eb5a8258ab9dd724d0ce5a18af44f479" Selector="&lt;webctrl id='title_type-9' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:Check.Target>
+              </ui:Check>
+              <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT'" sap:VirtualizedContainerService.HintSize="359,154" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="2003-01-01">
+                <ui:SetValue.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="08df4b46-9fd7-4123-a26e-4faaedbba878" InformativeScreenshot="3502ccf7a46c89dffbced37e551efcc6" Selector="&lt;webctrl name='release_date-min' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:SetValue.Target>
+              </ui:SetValue>
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SELECT'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition OffsetX="38" OffsetY="9" Position="TopLeft" />
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="50c04cb8-5b90-4624-9cb9-749fc02abcec" InformativeScreenshot="2db3de1858e6b8ae278780fe0d6f2f72" Selector="&lt;webctrl tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="7.5">
+                <ui:SelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                    <x:String>-</x:String>
+                    <x:String>1.0</x:String>
+                    <x:String>1.1</x:String>
+                    <x:String>1.2</x:String>
+                    <x:String>1.3</x:String>
+                    <x:String>1.4</x:String>
+                    <x:String>1.5</x:String>
+                    <x:String>1.6</x:String>
+                    <x:String>1.7</x:String>
+                    <x:String>1.8</x:String>
+                    <x:String>1.9</x:String>
+                    <x:String>2.0</x:String>
+                    <x:String>2.1</x:String>
+                    <x:String>2.2</x:String>
+                    <x:String>2.3</x:String>
+                    <x:String>2.4</x:String>
+                    <x:String>2.5</x:String>
+                    <x:String>2.6</x:String>
+                    <x:String>2.7</x:String>
+                    <x:String>2.8</x:String>
+                    <x:String>2.9</x:String>
+                    <x:String>3.0</x:String>
+                    <x:String>3.1</x:String>
+                    <x:String>3.2</x:String>
+                    <x:String>3.3</x:String>
+                    <x:String>3.4</x:String>
+                    <x:String>3.5</x:String>
+                    <x:String>3.6</x:String>
+                    <x:String>3.7</x:String>
+                    <x:String>3.8</x:String>
+                    <x:String>3.9</x:String>
+                    <x:String>4.0</x:String>
+                    <x:String>4.1</x:String>
+                    <x:String>4.2</x:String>
+                    <x:String>4.3</x:String>
+                    <x:String>4.4</x:String>
+                    <x:String>4.5</x:String>
+                    <x:String>4.6</x:String>
+                    <x:String>4.7</x:String>
+                    <x:String>4.8</x:String>
+                    <x:String>4.9</x:String>
+                    <x:String>5.0</x:String>
+                    <x:String>5.1</x:String>
+                    <x:String>5.2</x:String>
+                    <x:String>5.3</x:String>
+                    <x:String>5.4</x:String>
+                    <x:String>5.5</x:String>
+                    <x:String>5.6</x:String>
+                    <x:String>5.7</x:String>
+                    <x:String>5.8</x:String>
+                  </scg:List>
+                </ui:SelectItem.Items>
+                <ui:SelectItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a94479fc-b514-4392-b8a4-e670f228e4be" InformativeScreenshot="9f529461fec7253ee4d2db04a8244b98" Selector="&lt;webctrl tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:SelectItem.Target>
+              </ui:SelectItem>
+              <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap:VirtualizedContainerService.HintSize="359,134" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="10">
+                <ui:SelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                    <x:String>1.0</x:String>
+                    <x:String>1.1</x:String>
+                    <x:String>1.2</x:String>
+                    <x:String>1.3</x:String>
+                    <x:String>1.4</x:String>
+                    <x:String>1.5</x:String>
+                    <x:String>1.6</x:String>
+                    <x:String>1.7</x:String>
+                    <x:String>1.8</x:String>
+                    <x:String>1.9</x:String>
+                    <x:String>2.0</x:String>
+                    <x:String>2.1</x:String>
+                    <x:String>2.2</x:String>
+                    <x:String>2.3</x:String>
+                    <x:String>2.4</x:String>
+                    <x:String>2.5</x:String>
+                    <x:String>2.6</x:String>
+                    <x:String>2.7</x:String>
+                    <x:String>2.8</x:String>
+                    <x:String>2.9</x:String>
+                    <x:String>3.0</x:String>
+                    <x:String>3.1</x:String>
+                    <x:String>3.2</x:String>
+                    <x:String>3.3</x:String>
+                    <x:String>3.4</x:String>
+                    <x:String>3.5</x:String>
+                    <x:String>3.6</x:String>
+                    <x:String>3.7</x:String>
+                    <x:String>3.8</x:String>
+                    <x:String>3.9</x:String>
+                    <x:String>4.0</x:String>
+                    <x:String>4.1</x:String>
+                    <x:String>4.2</x:String>
+                    <x:String>4.3</x:String>
+                    <x:String>4.4</x:String>
+                    <x:String>4.5</x:String>
+                    <x:String>4.6</x:String>
+                    <x:String>4.7</x:String>
+                    <x:String>4.8</x:String>
+                    <x:String>4.9</x:String>
+                    <x:String>5.0</x:String>
+                    <x:String>5.1</x:String>
+                    <x:String>5.2</x:String>
+                    <x:String>5.3</x:String>
+                    <x:String>5.4</x:String>
+                    <x:String>5.5</x:String>
+                    <x:String>5.6</x:String>
+                    <x:String>5.7</x:String>
+                    <x:String>5.8</x:String>
+                    <x:String>5.9</x:String>
+                  </scg:List>
+                </ui:SelectItem.Items>
+                <ui:SelectItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="35b27ffb-e812-43ce-a55b-b67fb6383d1c" InformativeScreenshot="0ae70f9ca49542196687909cc3dc3588" Selector="&lt;webctrl name='user_rating-max' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:SelectItem.Target>
+              </ui:SelectItem>
+              <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT'" sap:VirtualizedContainerService.HintSize="359,154" sap2010:WorkflowViewState.IdRef="SetValue_2" Text="50000">
+                <ui:SetValue.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="47bedb05-f2a3-419b-a406-955724dcc90a" InformativeScreenshot="0f46c8f99a2c27fd551e8a795fcf228b" Selector="&lt;webctrl name='num_votes-min' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:SetValue.Target>
+              </ui:SetValue>
+              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  genres-1'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_4">
+                <ui:Check.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="965313ef-588e-41aa-8339-bb520d267ee1" InformativeScreenshot="d127eb65c4f568210877ea0f9be1e351" Selector="&lt;webctrl id='genres-1' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:Check.Target>
+              </ui:Check>
+              <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'INPUT  groups-1'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Check_5">
+                <ui:Check.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c944ec63-410b-4d62-8049-b5f62f9776dd" InformativeScreenshot="82ed7acf4d734271cffbe3f22ad4a119" Selector="&lt;webctrl id='groups-1' tag='INPUT' type='checkbox' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:Check.Target>
+              </ui:Check>
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="359,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition OffsetX="48" OffsetY="16" Position="TopLeft" />
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ded17dfb-06ac-40b0-b1c3-091ff7922e64" InformativeScreenshot="72356ab8208d6d80424e7d84f6968642" Selector="&lt;webctrl parentid='main' tag='BUTTON' type='submit' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+            </Sequence>
+          </ActivityAction>
+        </ui:BrowserScope.Body>
+      </ui:BrowserScope>
+    </Sequence>
+  </Sequence>
+</Activity>
