@@ -78,7 +78,6 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="revenue_scraping" sap:VirtualizedContainerService.HintSize="598,3314" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -142,16 +141,12 @@
                   </ui:Target>
                 </ui:SendHotkey.Target>
               </ui:SendHotkey>
-              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /title/tt0120338/?re...'" sap:VirtualizedContainerService.HintSize="438,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'A  /title/tt0120338/?re...'" sap:VirtualizedContainerService.HintSize="438,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition OffsetX="19" OffsetY="12" Position="TopLeft" />
                 </ui:Click.CursorPosition>
                 <ui:Click.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7afbe353-8f3a-466b-8f4b-8ed954ddbb1e" InformativeScreenshot="2ceaee51c8696592b9b007161c00c286" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='Search Results - Box Office Mojo' /&gt;&lt;webctrl aaname='{0}' parentid='a-page' tag='A' /&gt;&quot;, movie_name)]" WaitForReady="COMPLETE">
-                    <ui:Target.TimeoutMS>
-                      <InArgument x:TypeArguments="x:Int32" />
-                    </ui:Target.TimeoutMS>
-                  </ui:Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7afbe353-8f3a-466b-8f4b-8ed954ddbb1e" InformativeScreenshot="2ceaee51c8696592b9b007161c00c286" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='Search Results - Box Office Mojo' /&gt;&lt;webctrl aaname='{0}' parentid='a-page' tag='A' /&gt;&quot;, movie_name)]" TimeoutMS="3000" WaitForReady="COMPLETE" />
                 </ui:Click.Target>
               </ui:Click>
               <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
