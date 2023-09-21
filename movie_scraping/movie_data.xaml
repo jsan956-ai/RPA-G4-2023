@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1439,1187</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1412</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>movie_data_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -72,7 +72,7 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="movie_data" sap:VirtualizedContainerService.HintSize="536,1053" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="movie_data" sap:VirtualizedContainerService.HintSize="536,1347" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractMovieData" />
       <Variable x:TypeArguments="x:String" Name="DisplayMovieData" />
@@ -93,7 +93,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'FeatureFi Page'" sap:VirtualizedContainerService.HintSize="452,498" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="5476825077511c21ac639da3c3dc4191" Selector="&lt;html app='msedge.exe' omit:htmlwindowname='clicktoresponse:1695174397657:https://www.imdb.com/search/title/' title='Feature Film/TV Movie/TV Special/Short Film, Released at least 2003-01-01, User Rating between 7.5 and 10, Rating Count at least 50,000, Action (Sorted by IMDb Rating Descending) - IMDb' /&gt;">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'FeatureFi Page'" sap:VirtualizedContainerService.HintSize="452,498" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="5476825077511c21ac639da3c3dc4191" Selector="&lt;html app='msedge.exe' title='* (Sorted by *) - IMDb' /&gt;">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -136,5 +136,17 @@
       </Assign.Value>
     </Assign>
     <ui:OutputDataTable DataTable="[ExtractMovieData]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="494,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[DisplayMovieData]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="494,254" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,176" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[DisplayMovieData]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
   </Sequence>
 </Activity>
