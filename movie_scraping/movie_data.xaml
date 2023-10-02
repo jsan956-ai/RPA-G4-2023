@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>989,2150</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1205,2144</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>movie_data_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -74,7 +74,6 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
@@ -84,7 +83,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="movie_data" sap:VirtualizedContainerService.HintSize="999,2085" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="movie_data" sap:VirtualizedContainerService.HintSize="999,2079" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractMovieData" />
       <Variable x:TypeArguments="x:String" Name="DisplayMovieData" />
@@ -94,41 +93,35 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke imdb_set_filters workflow" sap:VirtualizedContainerService.HintSize="957,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="movie_scraping\imdb_set_filters.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke imdb_set_filters workflow" sap:VirtualizedContainerService.HintSize="957,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="movie_scraping\imdb_set_filters.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:Int32" x:Key="time_range_years">
-          <Literal x:TypeArguments="x:Int32" Value="20" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="time_range_years">20</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="957,1840" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="957,1835" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="TotalSentence" />
-        <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="matches" />
-        <Variable x:TypeArguments="x:Int32" Name="TotalMovies">
-          <Variable.Default>
-            <Literal x:TypeArguments="x:Int32" />
-          </Variable.Default>
-        </Variable>
+        <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="Matches" />
+        <Variable x:TypeArguments="x:Int32" Default="0" Name="TotalMovies" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'FeatureFi Page'" sap:VirtualizedContainerService.HintSize="915,1748" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="5476825077511c21ac639da3c3dc4191" Selector="&lt;html app='msedge.exe' title='* (Sorted by *) - IMDb' /&gt;">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'FeatureFi Page'" sap:VirtualizedContainerService.HintSize="915,1743" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="5476825077511c21ac639da3c3dc4191" Selector="&lt;html app='msedge.exe' title='* (Sorted by *) - IMDb' /&gt;">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="881,1602" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <Sequence sap:VirtualizedContainerService.HintSize="881,1597" sap2010:WorkflowViewState.IdRef="Sequence_15">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap:VirtualizedContainerService.HintSize="839,522" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence sap:VirtualizedContainerService.HintSize="839,521" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -161,11 +154,11 @@
                     <InArgument x:TypeArguments="x:Int32">[Int32.Parse(matches(matches.Count - 1).Value)]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[matches(matches.Count - 1).Value]" />
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[matches(matches.Count - 1).Value]" />
               </Sequence>
-              <If Condition="[movie_index &lt;= TotalMovies]" sap:VirtualizedContainerService.HintSize="839,948" sap2010:WorkflowViewState.IdRef="If_2">
+              <If Condition="[movie_index &lt;= TotalMovies]" sap:VirtualizedContainerService.HintSize="839,944" sap2010:WorkflowViewState.IdRef="If_2">
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="418,789" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence sap:VirtualizedContainerService.HintSize="418,787" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -196,19 +189,19 @@
                         <InArgument x:TypeArguments="sd:DataTable">[ExtractMovieData]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:OutputDataTable DataTable="[ExtractMovieData]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="376,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[DisplayMovieData]" />
-                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,177" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <ui:OutputDataTable DataTable="[ExtractMovieData]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="376,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[DisplayMovieData]" />
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,176" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[DisplayMovieData]" />
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[DisplayMovieData]" />
                     </Sequence>
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,397" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,395" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="EmptyTable" />
                     </Sequence.Variables>
@@ -225,8 +218,8 @@
                         <InArgument x:TypeArguments="sd:DataTable">[Nothing]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:OutputDataTable Text="{x:Null}" DataTable="[EmptyTable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" />
-                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[EmptyTable]" />
+                    <ui:OutputDataTable Text="{x:Null}" DataTable="[EmptyTable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" />
+                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[EmptyTable]" />
                   </Sequence>
                 </If.Else>
               </If>
