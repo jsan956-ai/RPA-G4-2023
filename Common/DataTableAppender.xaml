@@ -78,7 +78,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="For Each row As DataRow In DataTable2.Rows&#xD;&#xA;&#x9;Try&#xD;&#xA;&#x9;&#x9;DataTable1.ImportRow(row)&#xD;&#xA;&#x9;Catch ex As Exception&#xD;&#xA;    &#x9;' ignore rows that have violations&#xD;&#xA;&#x9;End Try&#xD;&#xA;Next" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="436,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xD;&#xA;&#x9;If DataTable1.RowCount = 0 Then DataTable1 = DataTable2.Clone()&#xD;&#xA;&#xD;&#xA;For Each row As DataRow In DataTable2.Rows&#xD;&#xA;&#x9;Try&#xD;&#xA;&#x9;&#x9;DataTable1.ImportRow(row)&#xD;&#xA;&#x9;Catch ex As Exception&#xD;&#xA;    &#x9;' ignore rows that have violations&#xD;&#xA;&#x9;End Try&#xD;&#xA;Next&#xD;&#xA;Catch ex As Exception&#xD;&#xA;    ' Print the error type.&#xD;&#xA;    Console.WriteLine(&quot;Error type: &quot; &amp; ex.GetType().Name)&#xD;&#xA;End Try&#xD;&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="436,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DataTable1">
           <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DataTable1" />
