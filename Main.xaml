@@ -71,20 +71,24 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke movie_data workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="movie_scraping\movie_data.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke movie_data workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="movie_scraping\ScrapMovies.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="output_movie_ranking">[movie_list]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="output_movie_ranking">
+          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="movie_list" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="movie_index">
+          <Literal x:TypeArguments="x:Int32" Value="100" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="time_range_years">
+          <Literal x:TypeArguments="x:Int32" Value="20" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke main workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="revenue_scraping\main.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="movies_output" />
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="initial_movies_list">
-          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="movie_list" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="RequiredMovieCount">
-          <Literal x:TypeArguments="x:Int32" Value="5" />
-        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="initial_movies_list">[movie_list]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="RequiredMovieCount">5</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
