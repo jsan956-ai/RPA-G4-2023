@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="rating_vs_worldwide_revenue" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1439,4138" sap2010:WorkflowViewState.IdRef="rating_vs_worldwide_revenue_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="rating_vs_worldwide_revenue" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="755,4361" sap2010:WorkflowViewState.IdRef="rating_vs_worldwide_revenue_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -62,43 +62,43 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="rating_vs_worldwide_revenue" sap:VirtualizedContainerService.HintSize="594,4073" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="rating_vs_worldwide_revenue" sap:VirtualizedContainerService.HintSize="704,4296" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="552,3857" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="Files\Movie-Data.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="642,4059" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="Files\Movie-Data.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,3748" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608,3949" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Desktop" sap:VirtualizedContainerService.HintSize="476,3594" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="Desktop" sap:VirtualizedContainerService.HintSize="546,3773" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Movie Dat Xlmain'" sap:VirtualizedContainerService.HintSize="434,636" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="1369c112cf19b4eb851fb44fbdbd2bcb" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Movie-Data - Excel' /&gt;">
+              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Movie Dat Xlmain'" sap:VirtualizedContainerService.HintSize="484,699" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="1369c112cf19b4eb851fb44fbdbd2bcb" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Movie-Data - Excel' /&gt;">
                 <ui:WindowScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,490" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,512" sap2010:WorkflowViewState.IdRef="Sequence_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab Item  Insert'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_16" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab Item  Insert'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_16" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition OffsetX="29" OffsetY="8" Position="TopLeft" />
                         </ui:Click.CursorPosition>
@@ -113,7 +113,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab Item  Insert'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab Item  Insert'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition OffsetX="27" OffsetY="12" Position="TopLeft" />
                         </ui:Click.CursorPosition>
@@ -128,7 +128,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button Recommended'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button Recommended'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition OffsetX="36" OffsetY="46" Position="TopLeft" />
                         </ui:Click.CursorPosition>
@@ -147,19 +147,19 @@
                   </ActivityAction>
                 </ui:WindowScope.Body>
               </ui:WindowScope>
-              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'InsertCha Nuidialog'" sap:VirtualizedContainerService.HintSize="434,744" sap2010:WorkflowViewState.IdRef="WindowScope_2" Selector="&lt;wnd app='excel.exe' cls='NUIDialog' title='Insert Chart' /&gt;">
+              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'InsertCha Nuidialog'" sap:VirtualizedContainerService.HintSize="484,768" sap2010:WorkflowViewState.IdRef="WindowScope_2" Selector="&lt;wnd app='excel.exe' cls='NUIDialog' title='Insert Chart' /&gt;">
                 <ui:WindowScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,636" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,659" sap2010:WorkflowViewState.IdRef="Sequence_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab Item  All Charts'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab Item  All Charts'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition OffsetX="32" OffsetY="7" Position="TopLeft" />
                         </ui:Click.CursorPosition>
@@ -174,7 +174,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'List Item  X Y (Scatter)'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'List Item  X Y (Scatter)'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_17" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition OffsetX="66" OffsetY="18" Position="TopLeft" />
                         </ui:Click.CursorPosition>
@@ -189,7 +189,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'List Item  Scatter'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_15" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'List Item  Scatter'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_18" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition OffsetX="110" OffsetY="66" Position="TopLeft" />
                         </ui:Click.CursorPosition>
@@ -204,7 +204,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  OK'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  OK'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition OffsetX="36" OffsetY="8" Position="TopLeft" />
                         </ui:Click.CursorPosition>
@@ -223,19 +223,19 @@
                   </ActivityAction>
                 </ui:WindowScope.Body>
               </ui:WindowScope>
-              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Movie Dat Xlmain'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="1369c112cf19b4eb851fb44fbdbd2bcb" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Movie-Data - Excel' /&gt;">
+              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Movie Dat Xlmain'" sap:VirtualizedContainerService.HintSize="484,365" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="1369c112cf19b4eb851fb44fbdbd2bcb" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Movie-Data - Excel' /&gt;">
                 <ui:WindowScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Select Data...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Select Data...'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition OffsetX="26" OffsetY="54" Position="TopLeft" />
                         </ui:Click.CursorPosition>
@@ -254,19 +254,19 @@
                   </ActivityAction>
                 </ui:WindowScope.Body>
               </ui:WindowScope>
-              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'SelectDat Nuidialog'" sap:VirtualizedContainerService.HintSize="434,744" sap2010:WorkflowViewState.IdRef="WindowScope_4" Selector="&lt;wnd app='excel.exe' cls='NUIDialog' title='Select Data Source' /&gt;">
+              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'SelectDat Nuidialog'" sap:VirtualizedContainerService.HintSize="484,768" sap2010:WorkflowViewState.IdRef="WindowScope_4" Selector="&lt;wnd app='excel.exe' cls='NUIDialog' title='Select Data Source' /&gt;">
                 <ui:WindowScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,636" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,659" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'CheckBox  Budget'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'CheckBox  Budget'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition OffsetX="9" OffsetY="6" Position="TopLeft" />
                         </ui:Click.CursorPosition>
@@ -281,7 +281,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="0" DisplayName="Click 'CheckBox Domestic'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="0" DisplayName="Click 'CheckBox Domestic'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition OffsetX="6" OffsetY="9" Position="TopLeft" />
                         </ui:Click.CursorPosition>
@@ -296,7 +296,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'CheckBox International'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'CheckBox International'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition OffsetX="10" OffsetY="8" Position="TopLeft" />
                         </ui:Click.CursorPosition>
@@ -311,7 +311,7 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  OK'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  OK'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition OffsetX="37" OffsetY="8" Position="TopLeft" />
                         </ui:Click.CursorPosition>
@@ -330,24 +330,24 @@
                   </ActivityAction>
                 </ui:WindowScope.Body>
               </ui:WindowScope>
-              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Movie Dat Xlmain'" sap:VirtualizedContainerService.HintSize="434,874" sap2010:WorkflowViewState.IdRef="WindowScope_5" InformativeScreenshot="1369c112cf19b4eb851fb44fbdbd2bcb" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Movie-Data - Excel' /&gt;">
+              <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Movie Dat Xlmain'" sap:VirtualizedContainerService.HintSize="484,902" sap2010:WorkflowViewState.IdRef="WindowScope_6" InformativeScreenshot="d9778be65289431b3e22991c002cc9c4" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Movie-Data - Excel' /&gt;">
                 <ui:WindowScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,728" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,755" sap2010:WorkflowViewState.IdRef="Sequence_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'chart: scatter'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'chart: scatter'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                         <ui:Click.CursorPosition>
-                          <ui:CursorPosition OffsetX="313" OffsetY="262" Position="TopLeft" />
+                          <ui:CursorPosition OffsetX="298" OffsetY="190" Position="TopLeft" />
                         </ui:Click.CursorPosition>
                         <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e27fb75-d494-4134-8201-247edb2d813b" InformativeScreenshot="c7c7f346e6796e8b2a617d5fc68a7ee3" Selector="&lt;uia name='Chart Area' role='Chart Element' /&gt;&lt;uia role='chart: scatter' /&gt;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="90360826-1b73-4888-b6ab-886b0d1f2bd9" InformativeScreenshot="262321445239d58d337989457657abdb" Selector="&lt;uia name='Chart Area' role='Chart Element' /&gt;&lt;uia role='chart: scatter' /&gt;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
@@ -357,9 +357,9 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'chart: scatter'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="x" KeyModifiers="Ctrl" SpecialKey="False">
+                      <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'chart: scatter'" sap:VirtualizedContainerService.HintSize="388,155" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="x" KeyModifiers="Ctrl" SpecialKey="False">
                         <ui:SendHotkey.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7d4210e6-e45b-4608-b331-8654c5dbd0f6" InformativeScreenshot="fdfc7fd89500c9b1c20222cda9539455" Selector="&lt;uia name='Chart Area' role='Chart Element' /&gt;&lt;uia role='chart: scatter' /&gt;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c50d4463-68ae-48ff-968a-1bdb09057133" InformativeScreenshot="262321445239d58d337989457657abdb" Selector="&lt;uia name='Chart Area' role='Chart Element' /&gt;&lt;uia role='chart: scatter' /&gt;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
@@ -369,12 +369,12 @@
                           </ui:Target>
                         </ui:SendHotkey.Target>
                       </ui:SendHotkey>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'item  T19'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'item  O18'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_15" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                         <ui:Click.CursorPosition>
-                          <ui:CursorPosition OffsetX="9" OffsetY="8" Position="TopLeft" />
+                          <ui:CursorPosition OffsetX="26" OffsetY="6" Position="TopLeft" />
                         </ui:Click.CursorPosition>
                         <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1af1dcf4-2974-4895-ab81-42577110c450" InformativeScreenshot="fe8e6dd3341863bd156d7c4d31c279e7" Selector="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='T19' cls='XLSpreadsheetCell' name='T19' tableCol='16' tableRow='19' /&gt;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fd4d56a6-ccf1-4ac6-9977-e1cf9493ccf4" InformativeScreenshot="7bc0e33c5c03ff108d89b88aa31c82dd" Selector="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='O18' cls='XLSpreadsheetCell' name='O18' tableCol='15' tableRow='18' /&gt;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
@@ -384,9 +384,9 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'item  T19'" sap:VirtualizedContainerService.HintSize="334,152" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="v" KeyModifiers="Ctrl" SpecialKey="False">
+                      <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'item  O18'" sap:VirtualizedContainerService.HintSize="388,155" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="v" KeyModifiers="Ctrl" SpecialKey="False">
                         <ui:SendHotkey.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="131ac035-c4d4-4a6a-a807-46a4e3c2f25d" InformativeScreenshot="72077b857b196038dd41606644afa1ec" Selector="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='T19' cls='XLSpreadsheetCell' name='T19' tableCol='16' tableRow='19' /&gt;">
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a4edde2c-fcf5-4b1f-9269-650abdbb78b6" InformativeScreenshot="6fa6a616d746ed98b8c0dcaa188a690b" Selector="&lt;uia automationid='Grid' cls='XLSpreadsheetGrid' name='Grid' /&gt;&lt;uia automationid='O18' cls='XLSpreadsheetCell' name='O18' tableCol='15' tableRow='18' /&gt;">
                             <ui:Target.TimeoutMS>
                               <InArgument x:TypeArguments="x:Int32" />
                             </ui:Target.TimeoutMS>
@@ -401,11 +401,11 @@
                 </ui:WindowScope.Body>
               </ui:WindowScope>
             </Sequence>
-            <ui:ExcelSaveWorkbook DisplayName="Save Workbook" sap:VirtualizedContainerService.HintSize="476,22" sap2010:WorkflowViewState.IdRef="ExcelSaveWorkbook_1" />
+            <ui:ExcelSaveWorkbook DisplayName="Save Workbook" sap:VirtualizedContainerService.HintSize="546,25" sap2010:WorkflowViewState.IdRef="ExcelSaveWorkbook_1" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="552,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Rating Vs. Worldwide Revenue graph has been created successfully.&quot;]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="642,86" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Rating Vs. Worldwide Revenue graph has been created successfully.&quot;]" />
   </Sequence>
 </Activity>
