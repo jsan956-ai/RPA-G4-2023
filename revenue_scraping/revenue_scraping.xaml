@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,3379</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>628,3551</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>revenue_scraping_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -78,9 +78,11 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="revenue_scraping" sap:VirtualizedContainerService.HintSize="598,3314" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="revenue_scraping" sap:VirtualizedContainerService.HintSize="598,3486" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="browser_data" />
       <Variable x:TypeArguments="s:String[]" Default="[new String(4) {}]" Name="revenues_text" />
@@ -331,6 +333,7 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
+    <ui:AppendLine DisplayName="Append Line" FileName="logs\runninglogs.txt" sap:VirtualizedContainerService.HintSize="556,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[now.ToString +&quot; Collects Movie Revenues&quot;]" UseDefaultEncoding="False" />
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="556,254" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,176" sap2010:WorkflowViewState.IdRef="Sequence_11">
