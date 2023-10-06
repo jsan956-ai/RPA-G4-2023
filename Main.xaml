@@ -90,7 +90,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:CreateFile ContinueOnError="{x:Null}" DisplayName="Create File" sap:VirtualizedContainerService.HintSize="630,132" sap2010:WorkflowViewState.IdRef="CreateFile_1" Name="runninglogs.txt" Path="logs\" />
-    <ui:AppendLine DisplayName="Append Line" FileName="logs\runninglogs.txt" sap:VirtualizedContainerService.HintSize="630,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[now.ToString + &quot; test&quot;]" UseDefaultEncoding="False" />
+    <ui:AppendLine DisplayName="Append Line" FileName="logs\runninglogs.txt" sap:VirtualizedContainerService.HintSize="630,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[now.ToString + &quot; Automation Begins&quot;]" UseDefaultEncoding="False" />
     <ui:InterruptibleWhile Condition="[HasMoviesToScrap AND StillNeededMovieCount &gt; 0]" DisplayName="While" sap:VirtualizedContainerService.HintSize="630,1400" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
       <ui:InterruptibleWhile.Body>
         <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="574,1235" sap2010:WorkflowViewState.IdRef="Sequence_2">
