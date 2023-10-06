@@ -1,1 +1,11 @@
-﻿10/06/2023 18:48:24 test
+﻿10/06/2023 19:50:30 Automation Begins
+10/06/2023 19:50:31 Browser Opened
+10/06/2023 19:56:42 Collects Movie Revenues
+10/06/2023 19:56:42 Completes Data Table
+10/06/2023 19:56:43 Ask Big J
+10/06/2023 19:56:44 Browser Opened
+10/06/2023 19:57:25 Collects Movie Revenues
+10/06/2023 19:57:25 Completes Data Table
+10/06/2023 19:57:25 Ask Big J
+10/06/2023 19:57:31 Data written to spreadsheet
+10/06/2023 19:57:31 End Automation

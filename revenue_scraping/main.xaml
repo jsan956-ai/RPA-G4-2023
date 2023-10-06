@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>628,2973</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>628,3145</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>jche_test_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -75,10 +75,9 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="revenue_main" sap:VirtualizedContainerService.HintSize="602,2908" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="revenue_main" sap:VirtualizedContainerService.HintSize="602,3080" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="output_text" />
       <Variable x:TypeArguments="ui:Browser" Name="browser" />
@@ -197,6 +196,7 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
+    <ui:AppendLine DisplayName="Append Line" FileName="logs\runninglogs.txt" sap:VirtualizedContainerService.HintSize="560,132" sap2010:WorkflowViewState.IdRef="AppendLine_3" Text="[now.ToString +&quot; Collects Movie Revenues&quot;]" UseDefaultEncoding="False" />
     <ui:OutputDataTable DataTable="[movies_output]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="560,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[output_text]" />
     <ui:AppendLine DisplayName="Append Line" FileName="logs\runninglogs.txt" sap:VirtualizedContainerService.HintSize="560,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[now.ToString + &quot; Completes Data Table&quot;]" UseDefaultEncoding="False" />
     <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'msedge.exe The'" sap:VirtualizedContainerService.HintSize="560,106" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="fbccf62a78a7eb353b33505b319273b2" Selector="&lt;html app='msedge.exe' title='Home - Box Office Mojo' /&gt;" WaitForReady="INTERACTIVE" />

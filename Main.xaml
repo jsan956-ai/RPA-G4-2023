@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>662,2054</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>628,2180</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -75,7 +75,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="672,1989" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="604,2115" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="ScrappedMovies" />
       <Variable x:TypeArguments="x:Int32" Default="[NeededMovieCount]" Name="StillNeededMovieCount" />
@@ -89,24 +89,24 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CreateFile ContinueOnError="{x:Null}" DisplayName="Create File" sap:VirtualizedContainerService.HintSize="630,132" sap2010:WorkflowViewState.IdRef="CreateFile_1" Name="runninglogs.txt" Path="logs\" />
-    <ui:AppendLine DisplayName="Append Line" FileName="logs\runninglogs.txt" sap:VirtualizedContainerService.HintSize="630,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[now.ToString + &quot; Automation Begins&quot;]" UseDefaultEncoding="False" />
-    <ui:InterruptibleWhile Condition="[HasMoviesToScrap AND StillNeededMovieCount &gt; 0]" DisplayName="While" sap:VirtualizedContainerService.HintSize="630,1400" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+    <ui:CreateFile ContinueOnError="{x:Null}" DisplayName="Create File" sap:VirtualizedContainerService.HintSize="562,132" sap2010:WorkflowViewState.IdRef="CreateFile_1" Name="runninglogs.txt" Path="logs\" />
+    <ui:AppendLine DisplayName="Append Line" FileName="logs\runninglogs.txt" sap:VirtualizedContainerService.HintSize="562,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[now.ToString + &quot; Automation Begins&quot;]" UseDefaultEncoding="False" />
+    <ui:InterruptibleWhile Condition="[HasMoviesToScrap AND StillNeededMovieCount &gt; 0]" DisplayName="While" sap:VirtualizedContainerService.HintSize="562,1355" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="574,1235" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1190" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke movie_data workflow" sap:VirtualizedContainerService.HintSize="532,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="movie_scraping\ScrapMovies.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke movie_data workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="movie_scraping\ScrapMovies.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <OutArgument x:TypeArguments="sd:DataTable" x:Key="output_movie_ranking">[ScrappedMovies]</OutArgument>
               <InArgument x:TypeArguments="x:Int32" x:Key="movie_index">[MovieNextIndex]</InArgument>
               <InArgument x:TypeArguments="x:Int32" x:Key="time_range_years">20</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <If Condition="[ScrappedMovies.RowCount = 0]" sap:VirtualizedContainerService.HintSize="532,442" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[ScrappedMovies.RowCount = 0]" sap:VirtualizedContainerService.HintSize="484,442" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="304,256" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
@@ -131,7 +131,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -140,14 +140,14 @@
               </Sequence>
             </If.Else>
           </If>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke main workflow" sap:VirtualizedContainerService.HintSize="532,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="revenue_scraping\main.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke main workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="revenue_scraping\main.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <OutArgument x:TypeArguments="sd:DataTable" x:Key="movies_output">[NewValidMovies]</OutArgument>
               <InArgument x:TypeArguments="sd:DataTable" x:Key="initial_movies_list">[ScrappedMovies]</InArgument>
               <InArgument x:TypeArguments="x:Int32" x:Key="RequiredMovieCount">[StillNeededMovieCount]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <Assign sap:VirtualizedContainerService.HintSize="532,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[StillNeededMovieCount]</OutArgument>
             </Assign.To>
@@ -155,7 +155,7 @@
               <InArgument x:TypeArguments="x:Int32">[StillNeededMovieCount - NewValidMovies.RowCount]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="532,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[MovieNextIndex]</OutArgument>
             </Assign.To>
@@ -163,7 +163,7 @@
               <InArgument x:TypeArguments="x:Int32">[MovieNextIndex+50]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="532,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Common\DataTableAppender.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Common\DataTableAppender.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DataTable1">[MoviesOutput]</InOutArgument>
               <InArgument x:TypeArguments="sd:DataTable" x:Key="DataTable2">[NewValidMovies]</InArgument>
@@ -172,10 +172,11 @@
         </Sequence>
       </ui:InterruptibleWhile.Body>
     </ui:InterruptibleWhile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="630,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="revenue_scraping\write_revenue_to_spreadsheet.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="562,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="revenue_scraping\write_revenue_to_spreadsheet.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="movie_write_data">[MoviesOutput]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
+    <ui:AppendLine DisplayName="Append Line" FileName="logs\runninglogs.txt" sap:VirtualizedContainerService.HintSize="562,132" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[now.ToString + &quot; End Automation&quot;]" UseDefaultEncoding="False" />
   </Sequence>
 </Activity>
