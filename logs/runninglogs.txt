@@ -1,11 +1,13 @@
-﻿10/06/2023 19:50:30 Automation Begins
-10/06/2023 19:50:31 Browser Opened
-10/06/2023 19:56:42 Collects Movie Revenues
-10/06/2023 19:56:42 Completes Data Table
-10/06/2023 19:56:43 Ask Big J
-10/06/2023 19:56:44 Browser Opened
-10/06/2023 19:57:25 Collects Movie Revenues
-10/06/2023 19:57:25 Completes Data Table
-10/06/2023 19:57:25 Ask Big J
-10/06/2023 19:57:31 Data written to spreadsheet
-10/06/2023 19:57:31 End Automation
+﻿10/09/2023 23:46:09 Automation Begins
+10/09/2023 23:46:10 Browser Opened
+10/09/2023 23:46:16Movie Added to Spreadsheet
+10/09/2023 23:52:18 Movie Revenue Collected
+10/09/2023 23:52:18 Completes Data Table
+10/09/2023 23:52:20 Ask Big J
+10/09/2023 23:52:20 Browser Opened
+10/09/2023 23:52:26Movie Added to Spreadsheet
+10/09/2023 23:53:05 Movie Revenue Collected
+10/09/2023 23:53:05 Completes Data Table
+10/09/2023 23:53:05 Ask Big J
+10/09/2023 23:53:12 Data written to spreadsheet
+10/09/2023 23:53:12 End Automation
