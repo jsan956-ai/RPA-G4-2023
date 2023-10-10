@@ -85,7 +85,7 @@
         <InArgument x:TypeArguments="sd:DataTable" x:Key="DataTable2">[DataTable2]</InArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <ui:AppendLine DisplayName="Append Line" FileName="logs\runninglogs.txt" sap:VirtualizedContainerService.HintSize="436,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[now.ToString + &quot; Ask Big J&quot;]" UseDefaultEncoding="False" />
+    <ui:AppendLine DisplayName="Append Line" FileName="logs\runninglogs.txt" sap:VirtualizedContainerService.HintSize="436,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[now.ToString + &quot; Check for minimum 25 movies, if not, iniciate rerun&quot;]" UseDefaultEncoding="False" />
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,249" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="326,171" sap2010:WorkflowViewState.IdRef="Sequence_3">

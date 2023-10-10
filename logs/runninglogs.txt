@@ -1,13 +1,17 @@
-﻿10/09/2023 23:46:09 Automation Begins
-10/09/2023 23:46:10 Browser Opened
-10/09/2023 23:46:16Movie Added to Spreadsheet
-10/09/2023 23:52:18 Movie Revenue Collected
-10/09/2023 23:52:18 Completes Data Table
-10/09/2023 23:52:20 Ask Big J
-10/09/2023 23:52:20 Browser Opened
-10/09/2023 23:52:26Movie Added to Spreadsheet
-10/09/2023 23:53:05 Movie Revenue Collected
-10/09/2023 23:53:05 Completes Data Table
-10/09/2023 23:53:05 Ask Big J
-10/09/2023 23:53:12 Data written to spreadsheet
-10/09/2023 23:53:12 End Automation
+﻿10/10/2023 23:21:16 Automation Begins
+10/10/2023 23:21:17 Browser Opened
+10/10/2023 23:21:23 Opens IMDB to scrape movie details
+10/10/2023 23:21:24 Movies Added to Spreadsheet
+10/10/2023 23:21:25 Opens Box Office Mojo to scrape revenues for movies in data table
+10/10/2023 23:27:34 Movie Revenue Collected
+10/10/2023 23:27:34 Completes Data Table by adding revenue fields
+10/10/2023 23:27:35 Check for minimum 25 movies, if not, iniciate rerun
+10/10/2023 23:27:36 Browser Opened
+10/10/2023 23:27:42 Opens IMDB to scrape movie details
+10/10/2023 23:27:42 Movies Added to Spreadsheet
+10/10/2023 23:27:44 Opens Box Office Mojo to scrape revenues for movies in data table
+10/10/2023 23:28:20 Movie Revenue Collected
+10/10/2023 23:28:20 Completes Data Table by adding revenue fields
+10/10/2023 23:28:21 Check for minimum 25 movies, if not, iniciate rerun
+10/10/2023 23:28:33 Data written to spreadsheet
+10/10/2023 23:28:33 End Automation
