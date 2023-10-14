@@ -1,12 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="dollar2int" this:dollar2int.dollar="$100,000" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="dollar2int" this:dollar2int.Dollar="$100,000" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="dollar" Type="InArgument(x:String)" />
-    <x:Property Name="int_value" Type="OutArgument(x:Int64)" />
+    <x:Property Name="Dollar" Type="InArgument(x:String)" />
+    <x:Property Name="IntValue" Type="OutArgument(x:Int64)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,700</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,770</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>dollar2int_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -69,19 +69,28 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="dollar2int" sap:VirtualizedContainerService.HintSize="480,635" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="dollar2int" sap:VirtualizedContainerService.HintSize="480,705" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="438,112" sap2010:WorkflowViewState.IdRef="Comment_1" Text="This workflow converts formatted dollar text into its corresponding dollar amount as an integer.&#xD;&#xA;An example of an input dollar text is: '$1,300' which will be converted to 1300" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,391" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="438,151" sap2010:WorkflowViewState.IdRef="Comment_1" Text="This workflow converts formatted dollar text into its corresponding dollar amount as an integer. If input dollar is input, '-1' is returned.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;An example of an input dollar text is: '$1,300' which will be converted to 1300" />
+    <TryCatch sap2010:Annotation.AnnotationText="Catch parsing error if receive invalid dollar text" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,422" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:InvokeCode Code="dollar = System.Text.RegularExpressions.Regex.Replace(dollar, &quot;[$,]&quot;, &quot;&quot;)&#xD;&#xA;int_value = CLng(dollar)" ContinueOnError="False" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+        <ui:InvokeCode Code="Dollar = System.Text.RegularExpressions.Regex.Replace(Dollar, &quot;[$,]&quot;, &quot;&quot;)&#xD;&#xA;IntValue = CLng(Dollar)" ContinueOnError="False" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
           <ui:InvokeCode.Arguments>
-            <InOutArgument x:TypeArguments="x:Int64" x:Key="int_value">[int_value]</InOutArgument>
-            <InOutArgument x:TypeArguments="x:String" x:Key="dollar">[dollar]</InOutArgument>
+            <InOutArgument x:TypeArguments="x:Int64" x:Key="IntValue">
+              <mva:VisualBasicReference x:TypeArguments="x:Int64" ExpressionText="IntValue" />
+            </InOutArgument>
+            <InOutArgument x:TypeArguments="x:String" x:Key="Dollar">
+              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Dollar" />
+            </InOutArgument>
           </ui:InvokeCode.Arguments>
         </ui:InvokeCode>
       </TryCatch.Try>
@@ -99,7 +108,7 @@
             </ActivityAction.Argument>
             <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:Int64">[int_value]</OutArgument>
+                <OutArgument x:TypeArguments="x:Int64">[IntValue]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:Int64">-1</InArgument>
