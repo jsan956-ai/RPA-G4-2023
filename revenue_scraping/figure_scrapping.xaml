@@ -1,12 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="revenue_scraping" this:revenue_scraping.MovieName="The Avengers" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="revenue_scraping" this:revenue_scraping.MovieName="Barbie" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="MovieName" Type="InArgument(x:String)" />
-    <x:Property Name="Revenues" Type="OutArgument(s:Object[])" />
+    <x:Property Name="Figures" Type="OutArgument(s:Object[])" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,950</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1067</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>revenue_scraping_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -82,9 +82,8 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="revenue_scraping" sap:VirtualizedContainerService.HintSize="408,885" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="revenue_scraping" sap:VirtualizedContainerService.HintSize="408,1002" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="ui:Browser" Name="BrowserData" />
       <Variable x:TypeArguments="s:String[]" Default="[new String(4) {}]" Name="FigureTexts" />
       <Variable x:TypeArguments="x:Int32" Name="FigureIndex" />
     </Sequence.Variables>
@@ -93,9 +92,10 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="366,208" sap2010:WorkflowViewState.IdRef="Comment_1" Text="This workflow searches the movie specified by the exact name on the BoxOfficeMojo website and scrap the movie data. The data contains budget, domestic revenue, international revenue and worldwide revenue and is returned as a String array.&#xD;&#xA;&#xD;&#xA;If some data is not available in the website, they are represented as '#N/A'." />
     <Assign sap:VirtualizedContainerService.HintSize="366,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
-        <OutArgument x:TypeArguments="s:Object[]">[Revenues]</OutArgument>
+        <OutArgument x:TypeArguments="s:Object[]">[Figures]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="s:Object[]">[new Object(3) {}]</InArgument>
@@ -119,11 +119,11 @@
           <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="FigureTexts" />
         </InArgument>
         <OutArgument x:TypeArguments="s:Object[]" x:Key="FigureRepresentation">
-          <mva:VisualBasicReference x:TypeArguments="s:Object[]" ExpressionText="Revenues" />
+          <mva:VisualBasicReference x:TypeArguments="s:Object[]" ExpressionText="Figures" />
         </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /?ref_=bo_nb_hm_mojo...'" sap:VirtualizedContainerService.HintSize="366,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Navigate back to BoxOfficMojo Home page" sap:VirtualizedContainerService.HintSize="366,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
       <ui:Click.CursorPosition>
         <ui:CursorPosition OffsetX="152" OffsetY="25" Position="TopLeft" />
       </ui:Click.CursorPosition>
@@ -135,6 +135,5 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="366,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Join(&quot;,&quot;, Revenues)]" />
   </Sequence>
 </Activity>
