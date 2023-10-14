@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,2099</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1412</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>jche_test_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -78,7 +78,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="revenue_main" sap:VirtualizedContainerService.HintSize="602,2034" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="revenue_main" sap:VirtualizedContainerService.HintSize="602,1347" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="MoviesText" />
       <Variable x:TypeArguments="ui:Browser" Name="RunningBrowser" />
@@ -99,13 +99,13 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Search through the movie list on BoxOfficeMojo and get their data one by one until there are sufficient movies." DataTable="[MovieSearchList]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="560,1284" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Search through the movie list on BoxOfficeMojo and get their data one by one until there are sufficient movies." DataTable="[MovieSearchList]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="560,847" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Movie" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1122" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,685" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="s:Object[]" Name="Figures" />
             </Sequence.Variables>
@@ -114,21 +114,14 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If sap2010:Annotation.AnnotationText="If we have enough valid movies, then we can stop searching more and return the movies" Condition="[OutputMovies.RowCount = RequiredMovieCount]" sap:VirtualizedContainerService.HintSize="484,343" sap2010:WorkflowViewState.IdRef="If_2">
+            <If sap2010:Annotation.AnnotationText="If we have enough valid movies, then we can stop searching more and return the movies" Condition="[OutputMovies.RowCount = RequiredMovieCount]" sap:VirtualizedContainerService.HintSize="484,289" sap2010:WorkflowViewState.IdRef="If_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:Break sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Break_1" />
-                </Sequence>
+                <ui:Break sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Break_1" />
               </If.Then>
               <If.Else>
                 <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9">
@@ -150,32 +143,22 @@
                 </OutArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <If sap2010:Annotation.AnnotationText="If movie data is valid, the data will be written to the output datatable" Condition="[Not Figures(0).Equals(&quot;#N/A&quot;)]" sap:VirtualizedContainerService.HintSize="484,495" sap2010:WorkflowViewState.IdRef="If_3">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,277" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{movie.Item(&quot;Movie Title&quot;), movie.Item(&quot;Movie Rating&quot;), Figures(0), Figures(1), Figures(2), Figures(3)}]" DataTable="[OutputMovies]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Sequence>
-              </If.Else>
-            </If>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Insert Movie Data workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="revenue_scraping\MovieDataAppender.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="OutputMovies">
+                  <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="OutputMovies" />
+                </InOutArgument>
+                <InArgument x:TypeArguments="s:Object[]" x:Key="Figures">
+                  <mva:VisualBasicValue x:TypeArguments="s:Object[]" ExpressionText="Figures" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="MovieName">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="DirectCast(movie.Item(&quot;Movie Title&quot;), String)" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Double" x:Key="MovieRating">
+                  <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="DirectCast(movie.Item(&quot;Movie Rating&quot;), Double)" />
+                </InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
@@ -185,8 +168,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:OutputDataTable DataTable="[OutputMovies]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="560,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[MoviesText]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="560,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[MoviesText]" />
     <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Browser on BoxOfficeMojo" sap:VirtualizedContainerService.HintSize="560,106" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="fbccf62a78a7eb353b33505b319273b2" Selector="&lt;html app='msedge.exe' title='Home - Box Office Mojo' /&gt;" WaitForReady="INTERACTIVE" />
   </Sequence>
 </Activity>
