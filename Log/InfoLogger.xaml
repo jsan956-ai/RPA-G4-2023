@@ -98,6 +98,6 @@
         </InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:WriteTextFile DisplayName="Write Text File" FileName="[in_LogFile]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[FormattedMessage]" />
+    <ui:AppendLine DisplayName="Append Line" FileName="[in_LogFile]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[FormattedMessage]" UseDefaultEncoding="False" />
   </Sequence>
 </Activity>
