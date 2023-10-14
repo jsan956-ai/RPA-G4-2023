@@ -1,12 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="revenue_scraping" this:revenue_scraping.movie_name="The Avengers" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="revenue_scraping" this:revenue_scraping.MovieName="The Avengers" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="movie_name" Type="InArgument(x:String)" />
-    <x:Property Name="revenues" Type="OutArgument(s:Int64[])" />
+    <x:Property Name="MovieName" Type="InArgument(x:String)" />
+    <x:Property Name="Revenues" Type="OutArgument(s:Int64[])" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,3379</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,3217</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>revenue_scraping_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -78,13 +78,15 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="revenue_scraping" sap:VirtualizedContainerService.HintSize="598,3314" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="revenue_scraping" sap:VirtualizedContainerService.HintSize="598,3152" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="ui:Browser" Name="browser_data" />
-      <Variable x:TypeArguments="s:String[]" Default="[new String(4) {}]" Name="revenues_text" />
-      <Variable x:TypeArguments="x:Int32" Name="revenues_index" />
+      <Variable x:TypeArguments="ui:Browser" Name="BrowserData" />
+      <Variable x:TypeArguments="s:String[]" Default="[new String(4) {}]" Name="FigureTexts" />
+      <Variable x:TypeArguments="x:Int32" Name="FigureIndex" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -93,13 +95,13 @@
     </sap:WorkflowViewStateService.ViewState>
     <Assign sap:VirtualizedContainerService.HintSize="556,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
-        <OutArgument x:TypeArguments="s:Int64[]">[revenues]</OutArgument>
+        <OutArgument x:TypeArguments="s:Int64[]">[Revenues]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="s:Int64[]">[new Int64(4) {}]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="556,2314" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="Web" sap:VirtualizedContainerService.HintSize="556,2211" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <Sequence.Variables>
         <Variable x:TypeArguments="ui:GenericValue" Name="Span" />
         <Variable x:TypeArguments="ui:GenericValue" Name="Span1" />
@@ -111,19 +113,19 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'Home BoxO Page'" sap:VirtualizedContainerService.HintSize="514,2222" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="79d3128619f86335d98bf4fac62c6444" Selector="&lt;html app='msedge.exe' title='Home - Box Office Mojo' /&gt;">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'Home BoxO Page'" sap:VirtualizedContainerService.HintSize="514,2119" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="79d3128619f86335d98bf4fac62c6444" Selector="&lt;html app='msedge.exe' title='Home - Box Office Mojo' /&gt;">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,2076" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,1973" sap2010:WorkflowViewState.IdRef="Sequence_14">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT  mojo-search-text...'" sap:VirtualizedContainerService.HintSize="438,154" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="[movie_name]">
+              <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'INPUT  mojo-search-text...'" sap:VirtualizedContainerService.HintSize="438,155" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="[MovieName]">
                 <ui:SetValue.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4d04a454-3ca4-44fa-bfc1-c48e84da53ac" InformativeScreenshot="4e3c20287dc05a96d7a1b39a8d04a813" Selector="&lt;webctrl tag='INPUT' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
@@ -132,7 +134,7 @@
                   </ui:Target>
                 </ui:SetValue.Target>
               </ui:SetValue>
-              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'INPUT  mojo-search-text...'" sap:VirtualizedContainerService.HintSize="438,152" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="enter" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'INPUT  mojo-search-text...'" sap:VirtualizedContainerService.HintSize="438,154" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="enter" KeyModifiers="None" SpecialKey="True">
                 <ui:SendHotkey.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="acd8e05f-94e8-4626-9bb5-44429f8a797d" InformativeScreenshot="22d9a3da0696ef7c0ddf48cbe51c97bc" Selector="&lt;webctrl tag='INPUT' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
@@ -146,25 +148,25 @@
                   <ui:CursorPosition OffsetX="19" OffsetY="12" Position="TopLeft" />
                 </ui:Click.CursorPosition>
                 <ui:Click.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7afbe353-8f3a-466b-8f4b-8ed954ddbb1e" InformativeScreenshot="2ceaee51c8696592b9b007161c00c286" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='Search Results - Box Office Mojo' /&gt;&lt;webctrl aaname='{0}' parentid='a-page' tag='A' /&gt;&quot;, movie_name)]" TimeoutMS="3000" WaitForReady="COMPLETE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7afbe353-8f3a-466b-8f4b-8ed954ddbb1e" InformativeScreenshot="2ceaee51c8696592b9b007161c00c286" Selector="[String.Format(&quot;&lt;html app='msedge.exe' title='Search Results - Box Office Mojo' /&gt;&lt;webctrl aaname='{0}' parentid='a-page' tag='A' /&gt;&quot;, MovieName)]" TimeoutMS="3000" WaitForReady="COMPLETE" />
                 </ui:Click.Target>
               </ui:Click>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,296" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                 <TryCatch.Try>
                   <ui:GetValue ContinueOnError="False" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_17">
                     <ui:GetValue.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="43c5db5e-3daa-464a-81e8-9bffdab6746e" InformativeScreenshot="d61faa5fe288d4a1bb14016e845f4fde" Selector="&lt;html app='msedge.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl aaname='Budget' parentid='a-page' tag='SPAN' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='a-page' tag='SPAN' idx='3' /&gt;" TimeoutMS="3000" WaitForReady="COMPLETE" />
                     </ui:GetValue.Target>
                     <ui:GetValue.Value>
-                      <OutArgument x:TypeArguments="x:String">[revenues_text(0)]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[FigureTexts(0)]</OutArgument>
                     </ui:GetValue.Value>
                   </ui:GetValue>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,130" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -174,7 +176,7 @@
                       </ActivityAction.Argument>
                       <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                         <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[revenues_text(0)]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String">[FigureTexts(0)]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
                           <InArgument x:TypeArguments="x:String">$-1</InArgument>
@@ -184,22 +186,22 @@
                   </Catch>
                 </TryCatch.Catches>
               </TryCatch>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,296" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                 <TryCatch.Try>
                   <ui:GetValue ContinueOnError="False" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_14">
                     <ui:GetValue.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="43c5db5e-3daa-464a-81e8-9bffdab6746e" InformativeScreenshot="83db4967b611bce737569019825082c7" Selector="&lt;html app='msedge.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='SPAN' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' class='a-size-medium a-text-bold' idx='1' /&gt;" TimeoutMS="3000" WaitForReady="COMPLETE" />
                     </ui:GetValue.Target>
                     <ui:GetValue.Value>
-                      <OutArgument x:TypeArguments="x:String">[revenues_text(1)]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[FigureTexts(1)]</OutArgument>
                     </ui:GetValue.Value>
                   </ui:GetValue>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,130" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -209,7 +211,7 @@
                       </ActivityAction.Argument>
                       <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                         <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[revenues_text(1)]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String">[FigureTexts(1)]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
                           <InArgument x:TypeArguments="x:String">$-1</InArgument>
@@ -219,19 +221,19 @@
                   </Catch>
                 </TryCatch.Catches>
               </TryCatch>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,338" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                 <TryCatch.Try>
                   <ui:GetValue ContinueOnError="False" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_15">
                     <ui:GetValue.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="63af11ae-3ade-459b-acc4-e7f39a41cfaf" InformativeScreenshot="45b11297b709c555dbf6bec063d48413" Selector="&lt;html app='msedge.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='SPAN' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' class='a-size-medium a-text-bold' idx='2' /&gt;" TimeoutMS="3000" WaitForReady="COMPLETE" />
                     </ui:GetValue.Target>
                     <ui:GetValue.Value>
-                      <OutArgument x:TypeArguments="x:String">[revenues_text(2)]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[FigureTexts(2)]</OutArgument>
                     </ui:GetValue.Value>
                   </ui:GetValue>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -244,7 +246,7 @@
                       </ActivityAction.Argument>
                       <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                         <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[revenues_text(2)]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String">[FigureTexts(2)]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
                           <InArgument x:TypeArguments="x:String">$-1</InArgument>
@@ -254,22 +256,22 @@
                   </Catch>
                 </TryCatch.Catches>
               </TryCatch>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,333" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,296" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                 <TryCatch.Try>
                   <ui:GetValue ContinueOnError="False" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_16">
                     <ui:GetValue.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6bcaa6b6-4df9-4839-acc5-04a0ad508380" InformativeScreenshot="12f1d37e30e758c74582a6c3bb35e56f" Selector="&lt;html app='msedge.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='SPAN' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' class='a-size-medium a-text-bold' idx='3' /&gt;" TimeoutMS="3000" WaitForReady="COMPLETE" />
                     </ui:GetValue.Target>
                     <ui:GetValue.Value>
-                      <OutArgument x:TypeArguments="x:String">[revenues_text(3)]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[FigureTexts(3)]</OutArgument>
                     </ui:GetValue.Value>
                   </ui:GetValue>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,130" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -279,7 +281,7 @@
                       </ActivityAction.Argument>
                       <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                         <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[revenues_text(3)]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String">[FigureTexts(3)]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
                           <InArgument x:TypeArguments="x:String">$-1</InArgument>
@@ -294,27 +296,39 @@
         </ui:BrowserScope.Body>
       </ui:BrowserScope>
     </Sequence>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[revenues_index]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="556,328" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[revenues_text]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[FigureIndex]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="556,430" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[FigureTexts]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:String" Name="revenue_text" />
+            <DelegateInArgument x:TypeArguments="x:String" Name="FigureText" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,305" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:Int64" Name="int_value" />
+              <Variable x:TypeArguments="x:Int64" Name="IntValue" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="revenue_scraping\dollar2int.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="revenue_scraping\dollar2int.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="dollar">[revenue_text]</InArgument>
-                <OutArgument x:TypeArguments="x:Int64" x:Key="int_value">[revenues(revenues_index)]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Dollar">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FigureText" />
+                </InArgument>
+                <OutArgument x:TypeArguments="x:Int64" x:Key="IntValue">
+                  <mva:VisualBasicReference x:TypeArguments="x:Int64" ExpressionText="IntValue" />
+                </OutArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
+            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int64">[Revenues(FigureIndex)]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int64">[IntValue]</InArgument>
+              </Assign.Value>
+            </Assign>
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
@@ -331,17 +345,6 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="556,254" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,176" sap2010:WorkflowViewState.IdRef="Sequence_11">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[String.Join(&quot;,&quot;, revenues)]" />
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="556,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Join(&quot;,&quot;, Revenues)]" />
   </Sequence>
 </Activity>
