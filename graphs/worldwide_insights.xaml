@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="worldwide_insights" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1244,837" sap2010:WorkflowViewState.IdRef="worldwide_insights_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="worldwide_insights" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="934,507" sap2010:WorkflowViewState.IdRef="worldwide_insights_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -70,7 +70,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
@@ -90,23 +89,23 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Movie Dat Xlmain'" sap:VirtualizedContainerService.HintSize="434,212" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="c2a1bec23bb4825eb0ad1035279fa4e2" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' omit:title='Movie-Data.xlsx - Excel' /&gt;">
+          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Movie Dat Xlmain'" sap:VirtualizedContainerService.HintSize="1191,3422" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="c2a1bec23bb4825eb0ad1035279fa4e2" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' omit:title='Movie-Data.xlsx - Excel' /&gt;">
             <ui:WindowScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Worldwide-Rating" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Worldwide-Rating" sap:VirtualizedContainerService.HintSize="1157,3276" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1115,758" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -119,16 +118,16 @@
                         <OutArgument x:TypeArguments="x:Double">[gradient]</OutArgument>
                       </ui:ExcelReadCell.Result>
                     </ui:ExcelReadCell>
-                    <ui:ExcelReadCell Cell="B2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_2" SheetName="rating_international">
+                    <ui:ExcelReadCell Cell="B2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_2" SheetName="rating_worldwide">
                       <ui:ExcelReadCell.Result>
                         <OutArgument x:TypeArguments="x:Double">[rSquare]</OutArgument>
                       </ui:ExcelReadCell.Result>
                     </ui:ExcelReadCell>
                   </Sequence>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1115,2386" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -144,7 +143,7 @@
                         </ui:CursorPosition>
                       </ui:Click.CursorPosition>
                       <ui:Click.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="49473976-c50f-4f94-9579-8af896a80624" InformativeScreenshot="c8ba59f5ce2412e8f5f597183c7c8286" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Movie-Data.xlsx - Excel' /&gt;&lt;uia automationid='Movie-Data.xlsx' cls='ExcelBookTabControl' name='Movie-Data' /&gt;&lt;uia automationid='SheetTab' name='rating_worldwide' role='Sheet Tab' /&gt;">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="49473976-c50f-4f94-9579-8af896a80624" InformativeScreenshot="c8ba59f5ce2412e8f5f597183c7c8286" Selector="&lt;uia automationid='Movie-Data.xlsx' cls='ExcelBookTabControl' name='Movie-Data' /&gt;&lt;uia automationid='SheetTab' name='rating_worldwide' role='Sheet Tab' /&gt;">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
@@ -159,7 +158,7 @@
                         <ui:CursorPosition OffsetX="457" OffsetY="31" Position="TopLeft" />
                       </ui:Click.CursorPosition>
                       <ui:Click.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f5f87fb-01f7-491a-b7df-1fa3846c0b67" InformativeScreenshot="d36a7c02318e26267055f0eca889738e" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Movie-Data.xlsx - Excel' /&gt;&lt;uia name='Chart Area' role='Chart Element' /&gt;&lt;uia role='chart: scatter' /&gt;">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f5f87fb-01f7-491a-b7df-1fa3846c0b67" InformativeScreenshot="d36a7c02318e26267055f0eca889738e" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' /&gt;&lt;uia name='Chart Area' role='Chart Element' /&gt;&lt;uia role='chart: scatter' /&gt;">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
