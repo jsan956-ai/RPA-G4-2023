@@ -71,6 +71,7 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="604,2414" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -178,22 +179,14 @@
           </ui:InvokeWorkflowFile>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_Message">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;There are currently a total of {0} valid movies.&quot;, MoviesOutput.Rowcount.ToString())" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
-              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Message">[String.Format("There are currently a total of {0} valid movies.", MoviesOutput.Rowcount.ToString())]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">[Nothing]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_Message">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;Still need {0} valid movies&quot;, StillNeededMovieCount)" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
-              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Message">[String.Format("Still need {0} valid movies", StillNeededMovieCount)]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">[Nothing]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
@@ -206,7 +199,12 @@
     </ui:InterruptibleWhile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="562,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="MovieDataScraping\Postprocess\MovieDataSpreadsheetWriter.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MovieData">[MoviesOutput]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MovieData">
+          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="MoviesOutput" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SpreadsheetPath">
+          <Literal x:TypeArguments="x:String">Files\Movie-Data.xlsx</Literal>
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke plotting_graphs workflow" sap:VirtualizedContainerService.HintSize="562,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="graphs\PlottingGraphs.xaml">

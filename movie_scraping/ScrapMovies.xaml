@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1756,2672</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,2672</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>movie_data_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -119,12 +119,8 @@
     </ui:OpenBrowser>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="957,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
-          <Literal x:TypeArguments="x:String">Opening up imdb browser browser to scrape movie names and ratings</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Message">Opening up imdb browser browser to scrape movie names and ratings</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">[Nothing]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="957,1898" sap2010:WorkflowViewState.IdRef="Sequence_5">
@@ -156,7 +152,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:GetValue ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="scraping the number for the number of movies scraped from the page.&#xD;&#xA;" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,163" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                <ui:GetValue ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="scraping the number for the number of movies scraped from the page.&#xA;" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,163" sap2010:WorkflowViewState.IdRef="GetValue_1">
                   <ui:GetValue.Target>
                     <ui:Target Element="{x:Null}" Id="8d16266a-e3ef-4ecf-8f04-19c94db323be" InformativeScreenshot="53a459467fabb01721f761d122dfb473" Selector="&lt;webctrl parentid='main' tag='DIV' /&gt;">
                       <ui:Target.ClippingRegion>
@@ -218,25 +214,11 @@
                         </ui:ExtractData.Target>
                       </ui:ExtractData>
                     </Sequence>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Scraped data for &quot; + out_MovieRanking.RowCount.ToString() +  &quot; movies from IMDB filtered search successfully.&quot;" />
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
-                        </InArgument>
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
                     <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
-                          <Literal x:TypeArguments="x:String">Closing browser</Literal>
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Message">Closing browser</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">[Nothing]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_1">
@@ -247,6 +229,12 @@
                         <InArgument x:TypeArguments="sd:DataTable">[ExtractMovieData]</InArgument>
                       </Assign.Value>
                     </Assign>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Message" xml:space="preserve">["Scraped data for " + out_MovieRanking.RowCount.ToString() +  " movies from IMDB filtered search successfully."]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">[Nothing]</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
                     <ui:OutputDataTable DataTable="[ExtractMovieData]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="376,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[DisplayMovieData]" />
                   </Sequence>
                 </If.Then>
@@ -270,12 +258,8 @@
                     </Assign>
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
-                          <Literal x:TypeArguments="x:String">No more movies to scrape from IMDB</Literal>
-                        </InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Message">No more movies to scrape from IMDB</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">[Nothing]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <ui:OutputDataTable DataTable="[out_MovieRanking]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" Text="[DisplayMovieData]" />
