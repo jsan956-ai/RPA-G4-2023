@@ -142,7 +142,7 @@
             </ui:InvokeWorkflowFile>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Insert Movie Data workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="MovieDataScraping\Postprocess\MovieDataAppender.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_OutputMovies">
+                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_OutputMovies">
                   <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="out_dt_OutputMovies" />
                 </InOutArgument>
                 <InArgument x:TypeArguments="s:Object[]" x:Key="in_Figures">
