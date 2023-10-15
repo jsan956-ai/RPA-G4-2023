@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="plotting_graphs" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1244,2347" sap2010:WorkflowViewState.IdRef="plotting_graphs_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="plotting_graphs" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1756,3107" sap2010:WorkflowViewState.IdRef="plotting_graphs_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -72,7 +72,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Plotting Graphs" sap:VirtualizedContainerService.HintSize="628,2282" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence DisplayName="Plotting Graphs" sap:VirtualizedContainerService.HintSize="628,3042" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -81,27 +81,23 @@
     <ui:Comment DisplayName="Comment" sap:VirtualizedContainerService.HintSize="586,112" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// The PlottingGraphs workflow is used to plot the movie data from the Excel sheet against the financial data. Generating one graph for each of the financial categories." />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="586,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
-          <Literal x:TypeArguments="x:String">Starting PlottingGraphs Workflow</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Message">Starting PlottingGraphs Workflow</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">[Nothing]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="586,1886" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="Files\Movie-Data.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="586,2646" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="Files\Movie-Data.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="552,1777" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence sap:VirtualizedContainerService.HintSize="552,2537" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap2010:Annotation.AnnotationText="Reads in all the movie data in the Excel sheet&#xD;&#xA;" DisplayName="Do" sap:VirtualizedContainerService.HintSize="510,193" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence sap2010:Annotation.AnnotationText="Reads in all the movie data in the Excel sheet&#xA;" DisplayName="Do" sap:VirtualizedContainerService.HintSize="510,193" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="ExcelDT" />
               </Sequence.Variables>
@@ -119,20 +115,40 @@
                 </ui:ExcelReadRange.Range>
               </ui:ExcelReadRange>
             </Sequence>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="510,1452" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="Files\Movie-Data.xlsx">
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="510,2212" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="Files\Movie-Data.xlsx">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                   </ActivityAction.Argument>
-                  <Sequence sap2010:Annotation.AnnotationText="Creates a graph for each financial category&#xD;&#xA;" DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1186" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence sap2010:Annotation.AnnotationText="Creates a graph for each financial category&#xA;" DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1946" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
+                          <Literal x:TypeArguments="x:String" xml:space="preserve">creating the scatterplot for rating vs budget </Literal>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
+                        </InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
                     <ueab:InsertExcelChartX InsertedChart="{x:Null}" ChartCategory="Scatter" ChartHeight="211" ChartType="xlXYScatter" ChartWidth="355" DisplayName="Insert Chart" sap:VirtualizedContainerService.HintSize="434,233" sap2010:WorkflowViewState.IdRef="InsertExcelChartX_1" InsertIntoSheet="[Excel.Sheet(&quot;rating_budget&quot;)]" Left="60" Range="[Excel.Sheet(&quot;details&quot;).Range(&quot;C:B&quot;)]" Top="20" />
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
+                          <Literal x:TypeArguments="x:String" xml:space="preserve">creating the scatterplot for rating vs domestic </Literal>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
+                        </InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
                     <ueab:InsertExcelChartX InsertedChart="{x:Null}" ChartCategory="Scatter" ChartHeight="211" ChartType="xlXYScatter" ChartWidth="355" DisplayName="Insert Chart" sap:VirtualizedContainerService.HintSize="434,233" sap2010:WorkflowViewState.IdRef="InsertExcelChartX_2" InsertIntoSheet="[Excel.Sheet(&quot;rating_domestic&quot;)]" Left="60" Range="[Excel.Sheet(&quot;details&quot;).Range(&quot;D:D, B:B&quot;)]" Top="20">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -141,8 +157,38 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ueab:InsertExcelChartX>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
+                          <Literal x:TypeArguments="x:String" xml:space="preserve">creating the scatterplot for rating vs international </Literal>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
+                        </InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
                     <ueab:InsertExcelChartX InsertedChart="{x:Null}" ChartCategory="Scatter" ChartHeight="211" ChartType="xlXYScatter" ChartWidth="355" DisplayName="Insert Chart" sap:VirtualizedContainerService.HintSize="434,233" sap2010:WorkflowViewState.IdRef="InsertExcelChartX_3" InsertIntoSheet="[Excel.Sheet(&quot;rating_international&quot;)]" Left="60" Range="[Excel.Sheet(&quot;details&quot;).Range(&quot;E:E,B:B&quot;)]" Top="20" />
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
+                          <Literal x:TypeArguments="x:String" xml:space="preserve">creating the scatterplot for rating vs worldwide </Literal>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
+                        </InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
                     <ueab:InsertExcelChartX InsertedChart="{x:Null}" ChartCategory="Scatter" ChartHeight="211" ChartType="xlXYScatter" ChartWidth="355" DisplayName="Insert Chart" sap:VirtualizedContainerService.HintSize="434,233" sap2010:WorkflowViewState.IdRef="InsertExcelChartX_4" InsertIntoSheet="[Excel.Sheet(&quot;rating_worldwide&quot;)]" Left="60" Range="[Excel.Sheet(&quot;details&quot;).Range(&quot;F:F,B:B&quot;)]" Top="20" />
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
+                          <Literal x:TypeArguments="x:String" xml:space="preserve">All scatterplot graphs created. </Literal>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
+                        </InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
                   </Sequence>
                 </ActivityAction>
               </ueab:ExcelApplicationCard.Body>

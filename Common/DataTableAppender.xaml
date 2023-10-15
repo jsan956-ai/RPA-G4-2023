@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,321</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1756,1001</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MovieAppender_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -68,10 +68,11 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MovieAppender" sap:VirtualizedContainerService.HintSize="376,256" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Appending the movie details from imdb and box office for the recently scraped movies to the central data table. State is maintained by cloning the previous table." DisplayName="MovieAppender" sap:VirtualizedContainerService.HintSize="376,313" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xA;&#x9;If io_DataTable1.RowCount = 0 Then io_DataTable1 = in_DataTable2.Clone()&#xA;&#xA;For Each row As DataRow In in_DataTable2.Rows&#xA;&#x9;Try&#xA;&#x9;&#x9;io_DataTable1.ImportRow(row)&#xA;&#x9;Catch ex As Exception&#xA;    &#x9;' ignore rows that have violations&#xA;&#x9;End Try&#xA;Next&#xA;Catch ex As Exception&#xA;    ' Print the error type.&#xA;    Console.WriteLine(&quot;Error type: &quot; &amp; ex.GetType().Name)&#xA;End Try&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
