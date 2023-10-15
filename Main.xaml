@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,1968</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,2479</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -74,7 +74,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="604,1903" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="604,2414" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="ScrappedMovies" />
       <Variable x:TypeArguments="x:Int32" Default="[in_NeededMovieCount]" Name="StillNeededMovieCount" />
@@ -88,9 +88,10 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InterruptibleWhile Condition="[HasMoviesToScrap AND StillNeededMovieCount &gt; 0]" DisplayName="While" sap:VirtualizedContainerService.HintSize="562,1355" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="562,74" sap2010:WorkflowViewState.IdRef="Comment_1" Text="This workflows is the starter Main file of the bot. Run it to let the bot execute from start." />
+    <ui:InterruptibleWhile sap2010:Annotation.AnnotationText="Keep scraping movies until required number is reached or we run out of moives" Condition="[HasMoviesToScrap AND StillNeededMovieCount &gt; 0]" DisplayName="While" sap:VirtualizedContainerService.HintSize="562,1752" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1190" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1556" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -103,26 +104,26 @@
               <InArgument x:TypeArguments="x:Int32" x:Key="time_range_years">20</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <If Condition="[ScrappedMovies.RowCount = 0]" sap:VirtualizedContainerService.HintSize="484,442" sap2010:WorkflowViewState.IdRef="If_1">
+          <If sap2010:Annotation.AnnotationText="If no more movies to scrape from IMDB, exit and stop" Condition="[ScrappedMovies.RowCount = 0]" sap:VirtualizedContainerService.HintSize="484,431" sap2010:WorkflowViewState.IdRef="If_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="304,256" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="No more movies to scrape, exit now" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap2010:Annotation.AnnotationText="Honestly we don't need the assignment and can just break directly" sap:VirtualizedContainerService.HintSize="262,102" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Boolean">[HasMoviesToScrap]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
                     <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                   </Assign.Value>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
                 </Assign>
                 <ui:Break sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Break_1" />
               </Sequence>
@@ -137,18 +138,17 @@
               </Sequence>
             </If.Else>
           </If>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke main workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="MovieDataScraping\MovieDataScrapingMain.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Scrap valid movies from BoxOfficeMojo" DisplayName="Invoke MovieDataScrapingMain workflow" sap:VirtualizedContainerService.HintSize="484,143" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="MovieDataScraping\MovieDataScrapingMain.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:Int32" x:Key="in_RequiredMovieCount">
-                <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_NeededMovieCount" />
-              </InArgument>
-              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MovieSearchList">
-                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="ScrappedMovies" />
-              </InArgument>
-              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_OutputMovies">
-                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="NewValidMovies" />
-              </OutArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_RequiredMovieCount">[in_NeededMovieCount]</InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MovieSearchList">[ScrappedMovies]</InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_OutputMovies">[NewValidMovies]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
           <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
@@ -158,13 +158,18 @@
               <InArgument x:TypeArguments="x:Int32">[StillNeededMovieCount - NewValidMovies.RowCount]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign sap2010:Annotation.AnnotationText="After scraping 50 movies, we need to scrap the next 50 movies" sap:VirtualizedContainerService.HintSize="484,102" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[MovieNextIndex]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:Int32">[MovieNextIndex+50]</InArgument>
             </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </Assign>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Common\DataTableAppender.xaml">
             <ui:InvokeWorkflowFile.Arguments>
@@ -172,14 +177,37 @@
               <InArgument x:TypeArguments="sd:DataTable" x:Key="DataTable2">[NewValidMovies]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Message">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;There are currently a total of {0} valid movies.&quot;, MoviesOutput.Rowcount.ToString())" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Message">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;Still need {0} valid movies&quot;, StillNeededMovieCount)" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
         </Sequence>
       </ui:InterruptibleWhile.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InterruptibleWhile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="562,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="MovieDataScraping\Postprocess\MovieDataSpreadsheetWriter.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MovieData">
-          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="MoviesOutput" />
-        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MovieData">[MoviesOutput]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke plotting_graphs workflow" sap:VirtualizedContainerService.HintSize="562,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="graphs\plotting_graphs.xaml">
