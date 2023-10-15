@@ -45,7 +45,7 @@
       {
         "editingStatus": "InProgress",
         "testCaseId": "e66db417-2e83-429a-a096-7be20483aa5e",
-        "fileName": "Tests\\TestMoviesScraping.xaml"
+        "fileName": "Tests\\TestMovieDataScraping.xaml"
       }
     ],
     "modernBehavior": false
