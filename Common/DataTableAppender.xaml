@@ -1,7 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="MovieAppender" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="DataTable1" Type="InOutArgument(sd:DataTable)" />
-    <x:Property Name="DataTable2" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="io_DataTable1" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="in_DataTable2" Type="InArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -78,13 +78,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xD;&#xA;&#x9;If DataTable1.RowCount = 0 Then DataTable1 = DataTable2.Clone()&#xD;&#xA;&#xD;&#xA;For Each row As DataRow In DataTable2.Rows&#xD;&#xA;&#x9;Try&#xD;&#xA;&#x9;&#x9;DataTable1.ImportRow(row)&#xD;&#xA;&#x9;Catch ex As Exception&#xD;&#xA;    &#x9;' ignore rows that have violations&#xD;&#xA;&#x9;End Try&#xD;&#xA;Next&#xD;&#xA;Catch ex As Exception&#xD;&#xA;    ' Print the error type.&#xD;&#xA;    Console.WriteLine(&quot;Error type: &quot; &amp; ex.GetType().Name)&#xD;&#xA;End Try&#xD;&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="436,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xD;&#xA;&#x9;If io_DataTable1.RowCount = 0 Then io_DataTable1 = in_DataTable2.Clone()&#xD;&#xA;&#xD;&#xA;For Each row As DataRow In in_DataTable2.Rows&#xD;&#xA;&#x9;Try&#xD;&#xA;&#x9;&#x9;io_DataTable1.ImportRow(row)&#xD;&#xA;&#x9;Catch ex As Exception&#xD;&#xA;    &#x9;' ignore rows that have violations&#xD;&#xA;&#x9;End Try&#xD;&#xA;Next&#xD;&#xA;Catch ex As Exception&#xD;&#xA;    ' Print the error type.&#xD;&#xA;    Console.WriteLine(&quot;Error type: &quot; &amp; ex.GetType().Name)&#xD;&#xA;End Try&#xD;&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="436,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
       <ui:InvokeCode.Arguments>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DataTable1">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DataTable1" />
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DataTable1">
+          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="io_DataTable1" />
         </InOutArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="DataTable2">
-          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DataTable2" />
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DataTable2">
+          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="in_DataTable2" />
         </InArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
@@ -96,7 +96,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:OutputDataTable DataTable="[DataTable1]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[output]" />
+          <ui:OutputDataTable DataTable="[io_DataTable1]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[output]" />
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
