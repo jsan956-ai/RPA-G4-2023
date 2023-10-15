@@ -3,7 +3,7 @@
     <x:Property Name="in_Gradient" Type="InArgument(x:Double)" />
     <x:Property Name="in_RSquare" Type="InArgument(x:Double)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1244,1187</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1244,1249</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -78,19 +78,25 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="Files\Graphs.docx" sap:VirtualizedContainerService.HintSize="1073,1122" sap2010:WorkflowViewState.IdRef="WordApplicationScope_9">
+  <p:WordApplicationScope sap2010:Annotation.AnnotationText="Writes the graph and insights to a word document." DisplayName="Word Application Scope" FilePath="Files\Graphs.docx" sap:VirtualizedContainerService.HintSize="1073,1184" sap2010:WorkflowViewState.IdRef="WordApplicationScope_9">
     <p:WordApplicationScope.Body>
       <ActivityAction x:TypeArguments="ui:WordDocument">
         <ActivityAction.Argument>
           <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
         </ActivityAction.Argument>
-        <Sequence sap:VirtualizedContainerService.HintSize="1039,1013" sap2010:WorkflowViewState.IdRef="Sequence_89">
+        <Sequence sap:VirtualizedContainerService.HintSize="1039,1044" sap2010:WorkflowViewState.IdRef="Sequence_89">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <p:WordPasteFromClipboard Found="{x:Null}" Text="{x:Null}" DisplayName="Paste Chart/Picture into Document" sap:VirtualizedContainerService.HintSize="997,198" sap2010:WorkflowViewState.IdRef="WordPasteFromClipboard_9" PasteOption="Picture" PasteRelativeTo="Document" Position="End" />
+          <p:WordPasteFromClipboard Found="{x:Null}" Text="{x:Null}" sap2010:Annotation.AnnotationText="Pastes the previously copied Graph into the word document." DisplayName="Paste Chart/Picture into Document" sap:VirtualizedContainerService.HintSize="997,229" sap2010:WorkflowViewState.IdRef="WordPasteFromClipboard_9" PasteOption="Picture" PasteRelativeTo="Document" Position="End">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </p:WordPasteFromClipboard>
           <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="997,104" sap2010:WorkflowViewState.IdRef="WordAppendText_29" Text="[&quot;Gradient: &quot; + in_Gradient.ToString]" />
           <If sap2010:Annotation.AnnotationText="Checking if the gradient is positive or negative, then adding a statement depending on it.&#xD;&#xA;" Condition="[in_Gradient &lt; 0]" sap:VirtualizedContainerService.HintSize="997,395" sap2010:WorkflowViewState.IdRef="If_8">
             <sap:WorkflowViewStateService.ViewState>
@@ -127,6 +133,7 @@
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
   </p:WordApplicationScope>
