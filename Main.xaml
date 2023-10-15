@@ -177,7 +177,9 @@
     </ui:InterruptibleWhile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="562,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="MovieDataScraping\Postprocess\MovieDataSpreadsheetWriter.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="movie_write_data">[MoviesOutput]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_MovieData">
+          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="MoviesOutput" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke plotting_graphs workflow" sap:VirtualizedContainerService.HintSize="562,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="graphs\plotting_graphs.xaml">
