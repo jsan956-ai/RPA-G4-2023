@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1756,1001</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1756,1113</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MovieAppender_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -71,7 +71,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Append the the movie details scrapped from IMDB and their corresponding details from BOX office into one central datatable through this activity. State manintained by copying from the previous data table to a new one." DisplayName="MovieAppender" sap:VirtualizedContainerService.HintSize="478,896" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Append the the movie details scrapped from IMDB and their corresponding details from BOX office into one central datatable through this activity. State manintained by copying from the previous data table to a new one." DisplayName="MovieAppender" sap:VirtualizedContainerService.HintSize="478,1048" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Output" />
     </Sequence.Variables>
@@ -81,6 +81,16 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InfoLogger workflow" sap:VirtualizedContainerService.HintSize="436,112" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
+          <Literal x:TypeArguments="x:String">Appending to the Movie Central Datatable</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xA;&#x9;If DataTable1.RowCount = 0 Then DataTable1 = DataTable2.Clone()&#xA;&#xA;For Each row As DataRow In DataTable2.Rows&#xA;&#x9;Try&#xA;&#x9;&#x9;DataTable1.ImportRow(row)&#xA;&#x9;Catch ex As Exception&#xA;    &#x9;' ignore rows that have violations&#xA;&#x9;End Try&#xA;Next&#xA;Catch ex As Exception&#xA;    ' Print the error type.&#xA;    Console.WriteLine(&quot;Error type: &quot; &amp; ex.GetType().Name)&#xA;End Try&#xA;" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="436,164" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DataTable1">[in_or_out_DataTable1]</InOutArgument>
