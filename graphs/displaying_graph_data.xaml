@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="displaying_graph_data" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1341,4219" sap2010:WorkflowViewState.IdRef="displaying_graph_data_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="displaying_graph_data" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1341,15301" sap2010:WorkflowViewState.IdRef="displaying_graph_data_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -73,7 +73,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -82,20 +81,20 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="displaying_graph_data" sap:VirtualizedContainerService.HintSize="1351,15333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="displaying_graph_data" sap:VirtualizedContainerService.HintSize="1351,15236" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1309,15241" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="Files\Movie-Data.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1309,15144" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="Files\Movie-Data.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="1275,15132" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="1275,15035" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Double" Name="gradient" />
               <Variable x:TypeArguments="x:Double" Name="rSquare" />
@@ -106,20 +105,20 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Movie Dat Xlmain'" sap:VirtualizedContainerService.HintSize="1233,3730" sap2010:WorkflowViewState.IdRef="WindowScope_7" InformativeScreenshot="c2a1bec23bb4825eb0ad1035279fa4e2" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' omit:title='Movie-Data.xlsx - Excel' /&gt;">
+            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Movie Dat Xlmain'" sap:VirtualizedContainerService.HintSize="1233,3743" sap2010:WorkflowViewState.IdRef="WindowScope_7" InformativeScreenshot="c2a1bec23bb4825eb0ad1035279fa4e2" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' omit:title='Movie-Data.xlsx - Excel' /&gt;">
               <ui:WindowScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Budget-Rating" sap:VirtualizedContainerService.HintSize="1199,3584" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                  <Sequence DisplayName="Budget-Rating" sap:VirtualizedContainerService.HintSize="1199,3597" sap2010:WorkflowViewState.IdRef="Sequence_34">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence sap:VirtualizedContainerService.HintSize="1157,3492" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                    <Sequence sap:VirtualizedContainerService.HintSize="1157,3505" sap2010:WorkflowViewState.IdRef="Sequence_21">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -253,7 +252,7 @@
                           </ui:Click.Target>
                         </ui:Click>
                       </Sequence>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1115,1634" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1115,1647" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -275,7 +274,7 @@
                             </ui:Target>
                           </ui:Click.Target>
                         </ui:Click>
-                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'chart: scatter'" sap:VirtualizedContainerService.HintSize="1073,152" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="c" KeyModifiers="Ctrl">
+                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'chart: scatter'" sap:VirtualizedContainerService.HintSize="1073,154" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="c" KeyModifiers="Ctrl">
                           <ui:SendHotkey.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="19cba58d-0ebb-45f2-ad5d-f6ad7ca57656" InformativeScreenshot="e4cbf4d4aa750ba2ffe3371c7ea8db5c" Selector="&lt;uia name='Chart Area' role='Chart Element' /&gt;&lt;uia role='chart: scatter' /&gt;">
                               <ui:Target.TimeoutMS>
@@ -287,21 +286,21 @@
                             </ui:Target>
                           </ui:SendHotkey.Target>
                         </ui:SendHotkey>
-                        <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="Files\Graphs.docx" sap:VirtualizedContainerService.HintSize="1073,1080" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
+                        <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="Files\Graphs.docx" sap:VirtualizedContainerService.HintSize="1073,1090" sap2010:WorkflowViewState.IdRef="WordApplicationScope_2">
                           <p:WordApplicationScope.Body>
                             <ActivityAction x:TypeArguments="ui:WordDocument">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
                               </ActivityAction.Argument>
-                              <Sequence sap:VirtualizedContainerService.HintSize="1039,971" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                              <Sequence sap:VirtualizedContainerService.HintSize="1039,981" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <p:WordPasteFromClipboard Found="{x:Null}" Text="{x:Null}" DisplayName="Paste Chart/Picture into Document" sap:VirtualizedContainerService.HintSize="997,198" sap2010:WorkflowViewState.IdRef="WordPasteFromClipboard_2" PasteOption="Picture" PasteRelativeTo="Document" Position="End" />
-                                <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="997,104" sap2010:WorkflowViewState.IdRef="WordAppendText_2" Text="[&quot;Gradient: &quot; + gradient.ToString]" />
-                                <If Condition="[gradient &lt; 0]" sap:VirtualizedContainerService.HintSize="997,353" sap2010:WorkflowViewState.IdRef="If_1">
+                                <p:WordPasteFromClipboard Found="{x:Null}" Text="{x:Null}" DisplayName="Paste Chart/Picture into Document" sap:VirtualizedContainerService.HintSize="997,202" sap2010:WorkflowViewState.IdRef="WordPasteFromClipboard_2" PasteOption="Picture" PasteRelativeTo="Document" Position="End" />
+                                <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="997,106" sap2010:WorkflowViewState.IdRef="WordAppendText_2" Text="[&quot;Gradient: &quot; + gradient.ToString]" />
+                                <If Condition="[gradient &lt; 0]" sap:VirtualizedContainerService.HintSize="997,355" sap2010:WorkflowViewState.IdRef="If_1">
                                   <If.Then>
                                     <Sequence sap:VirtualizedContainerService.HintSize="476,196" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                       <sap:WorkflowViewStateService.ViewState>
@@ -323,7 +322,7 @@
                                     </Sequence>
                                   </If.Else>
                                 </If>
-                                <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="997,104" sap2010:WorkflowViewState.IdRef="WordAppendText_4" Text="[&quot;Strength of Relationship: &quot; + rSquare.ToString]" />
+                                <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="997,106" sap2010:WorkflowViewState.IdRef="WordAppendText_4" Text="[&quot;Strength of Relationship: &quot; + rSquare.ToString]" />
                               </Sequence>
                             </ActivityAction>
                           </p:WordApplicationScope.Body>
@@ -334,7 +333,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </p:WordApplicationScope>
-                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1073,84" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Done&quot;]" />
+                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1073,85" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Done&quot;]" />
                       </Sequence>
                     </Sequence>
                   </Sequence>
@@ -829,20 +828,20 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:WindowScope>
-            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Movie Dat Xlmain'" sap:VirtualizedContainerService.HintSize="1233,3730" sap2010:WorkflowViewState.IdRef="WindowScope_16" InformativeScreenshot="c2a1bec23bb4825eb0ad1035279fa4e2" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' omit:title='Movie-Data.xlsx - Excel' /&gt;">
+            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Movie Dat Xlmain'" sap:VirtualizedContainerService.HintSize="1233,3620" sap2010:WorkflowViewState.IdRef="WindowScope_16" InformativeScreenshot="c2a1bec23bb4825eb0ad1035279fa4e2" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' omit:title='Movie-Data.xlsx - Excel' /&gt;">
               <ui:WindowScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Budget-Rating" sap:VirtualizedContainerService.HintSize="1199,3584" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                  <Sequence DisplayName="Budget-Rating" sap:VirtualizedContainerService.HintSize="1199,3474" sap2010:WorkflowViewState.IdRef="Sequence_92">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence sap:VirtualizedContainerService.HintSize="1157,3492" sap2010:WorkflowViewState.IdRef="Sequence_91">
+                    <Sequence sap:VirtualizedContainerService.HintSize="1157,3382" sap2010:WorkflowViewState.IdRef="Sequence_91">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -976,7 +975,7 @@
                           </ui:Click.Target>
                         </ui:Click>
                       </Sequence>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1115,1634" sap2010:WorkflowViewState.IdRef="Sequence_90">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1115,1524" sap2010:WorkflowViewState.IdRef="Sequence_90">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -998,7 +997,7 @@
                             </ui:Target>
                           </ui:Click.Target>
                         </ui:Click>
-                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'chart: scatter'" sap:VirtualizedContainerService.HintSize="1073,152" sap2010:WorkflowViewState.IdRef="SendHotkey_30" Key="c" KeyModifiers="Ctrl">
+                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'chart: scatter'" sap:VirtualizedContainerService.HintSize="1073,154" sap2010:WorkflowViewState.IdRef="SendHotkey_30" Key="c" KeyModifiers="Ctrl">
                           <ui:SendHotkey.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="19cba58d-0ebb-45f2-ad5d-f6ad7ca57656" InformativeScreenshot="e4cbf4d4aa750ba2ffe3371c7ea8db5c" Selector="&lt;uia name='Chart Area' role='Chart Element' /&gt;&lt;uia role='chart: scatter' /&gt;">
                               <ui:Target.TimeoutMS>
@@ -1010,43 +1009,43 @@
                             </ui:Target>
                           </ui:SendHotkey.Target>
                         </ui:SendHotkey>
-                        <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="Files\Graphs.docx" sap:VirtualizedContainerService.HintSize="1073,1080" sap2010:WorkflowViewState.IdRef="WordApplicationScope_9">
+                        <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="Files\Graphs.docx" sap:VirtualizedContainerService.HintSize="1073,1092" sap2010:WorkflowViewState.IdRef="WordApplicationScope_9">
                           <p:WordApplicationScope.Body>
                             <ActivityAction x:TypeArguments="ui:WordDocument">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
                               </ActivityAction.Argument>
-                              <Sequence sap:VirtualizedContainerService.HintSize="1039,971" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                              <Sequence sap:VirtualizedContainerService.HintSize="1039,983" sap2010:WorkflowViewState.IdRef="Sequence_89">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <p:WordPasteFromClipboard Found="{x:Null}" Text="{x:Null}" DisplayName="Paste Chart/Picture into Document" sap:VirtualizedContainerService.HintSize="997,198" sap2010:WorkflowViewState.IdRef="WordPasteFromClipboard_9" PasteOption="Picture" PasteRelativeTo="Document" Position="End" />
-                                <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="997,104" sap2010:WorkflowViewState.IdRef="WordAppendText_29" Text="[&quot;Gradient: &quot; + gradient.ToString]" />
-                                <If Condition="[gradient &lt; 0]" sap:VirtualizedContainerService.HintSize="997,353" sap2010:WorkflowViewState.IdRef="If_8">
+                                <p:WordPasteFromClipboard Found="{x:Null}" Text="{x:Null}" DisplayName="Paste Chart/Picture into Document" sap:VirtualizedContainerService.HintSize="997,202" sap2010:WorkflowViewState.IdRef="WordPasteFromClipboard_9" PasteOption="Picture" PasteRelativeTo="Document" Position="End" />
+                                <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="997,106" sap2010:WorkflowViewState.IdRef="WordAppendText_29" Text="[&quot;Gradient: &quot; + gradient.ToString]" />
+                                <If Condition="[gradient &lt; 0]" sap:VirtualizedContainerService.HintSize="997,357" sap2010:WorkflowViewState.IdRef="If_8">
                                   <If.Then>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="476,196" sap2010:WorkflowViewState.IdRef="Sequence_87">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="476,198" sap2010:WorkflowViewState.IdRef="Sequence_87">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="434,104" sap2010:WorkflowViewState.IdRef="WordAppendText_30" Text="The trend is negative" />
+                                      <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="WordAppendText_30" Text="The trend is negative" />
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="476,196" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="476,198" sap2010:WorkflowViewState.IdRef="Sequence_88">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="434,104" sap2010:WorkflowViewState.IdRef="WordAppendText_31" Text="The trend is positive" />
+                                      <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="WordAppendText_31" Text="The trend is positive" />
                                     </Sequence>
                                   </If.Else>
                                 </If>
-                                <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="997,104" sap2010:WorkflowViewState.IdRef="WordAppendText_32" Text="[&quot;Strength of Relationship: &quot; + rSquare.ToString]" />
+                                <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="997,106" sap2010:WorkflowViewState.IdRef="WordAppendText_32" Text="[&quot;Strength of Relationship: &quot; + rSquare.ToString]" />
                               </Sequence>
                             </ActivityAction>
                           </p:WordApplicationScope.Body>
@@ -1057,7 +1056,6 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </p:WordApplicationScope>
-                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1073,84" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[&quot;Done&quot;]" />
                       </Sequence>
                     </Sequence>
                   </Sequence>
