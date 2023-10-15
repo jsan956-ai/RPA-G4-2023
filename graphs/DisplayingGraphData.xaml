@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="displaying_graph_data" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1756,11042" sap2010:WorkflowViewState.IdRef="displaying_graph_data_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="displaying_graph_data" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1244,11042" sap2010:WorkflowViewState.IdRef="displaying_graph_data_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -82,7 +82,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="displaying_graph_data" sap:VirtualizedContainerService.HintSize="612,10977" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DisplayingGraphData" sap:VirtualizedContainerService.HintSize="612,10977" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -97,8 +97,8 @@
           </ActivityAction.Argument>
           <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="536,10776" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:Double" Name="gradient" />
-              <Variable x:TypeArguments="x:Double" Name="rSquare" />
+              <Variable x:TypeArguments="x:Double" Name="Gradient" />
+              <Variable x:TypeArguments="x:Double" Name="RSquare" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -112,7 +112,7 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Budget-Rating" sap:VirtualizedContainerService.HintSize="460,2495" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                  <Sequence DisplayName="Get Budget Ratings" sap:VirtualizedContainerService.HintSize="460,2495" sap2010:WorkflowViewState.IdRef="Sequence_34">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -126,7 +126,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,758" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                      <Sequence DisplayName="Calculating Insights" sap:VirtualizedContainerService.HintSize="376,758" sap2010:WorkflowViewState.IdRef="Sequence_20">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -139,16 +139,16 @@
                         <ui:ExcelWriteCell Cell="B2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="rating_budget" Text="=RSQ(details!C1:C26,details!B1:B26)" />
                         <ui:ExcelReadCell Cell="B1" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="rating_budget">
                           <ui:ExcelReadCell.Result>
-                            <OutArgument x:TypeArguments="x:Double">[gradient]</OutArgument>
+                            <OutArgument x:TypeArguments="x:Double">[Gradient]</OutArgument>
                           </ui:ExcelReadCell.Result>
                         </ui:ExcelReadCell>
                         <ui:ExcelReadCell Cell="B2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_2" SheetName="rating_budget">
                           <ui:ExcelReadCell.Result>
-                            <OutArgument x:TypeArguments="x:Double">[rSquare]</OutArgument>
+                            <OutArgument x:TypeArguments="x:Double">[RSquare]</OutArgument>
                           </ui:ExcelReadCell.Result>
                         </ui:ExcelReadCell>
                       </Sequence>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,928" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                      <Sequence DisplayName="Adding Trendline" sap:VirtualizedContainerService.HintSize="376,928" sap2010:WorkflowViewState.IdRef="Sequence_16">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -253,7 +253,7 @@
                           </ui:Click.Target>
                         </ui:Click>
                       </Sequence>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,545" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Writing to Docs" sap:VirtualizedContainerService.HintSize="376,545" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -289,8 +289,12 @@
                         </ui:SendHotkey>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke WriteInsightsToDoc workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="graphs\WriteInsightsToDoc.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:Double" x:Key="gradient">[gradient]</InArgument>
-                            <InArgument x:TypeArguments="x:Double" x:Key="rSquare">[rSquare]</InArgument>
+                            <InArgument x:TypeArguments="x:Double" x:Key="in_Gradient">
+                              <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="Gradient" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:Double" x:Key="in_RSquare">
+                              <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="RSquare" />
+                            </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -300,7 +304,7 @@
               </ui:WindowScope.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -311,7 +315,7 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Budget-Rating" sap:VirtualizedContainerService.HintSize="460,2495" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                  <Sequence DisplayName="Get Domestic Rating" sap:VirtualizedContainerService.HintSize="460,2495" sap2010:WorkflowViewState.IdRef="Sequence_76">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -325,7 +329,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,758" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                      <Sequence DisplayName="Calculating Insights" sap:VirtualizedContainerService.HintSize="376,758" sap2010:WorkflowViewState.IdRef="Sequence_69">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -338,16 +342,16 @@
                         <ui:ExcelWriteCell Cell="B2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="rating_domestic" Text="=RSQ(details!D1:D26,details!B1:B26)" />
                         <ui:ExcelReadCell Cell="B1" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_3" SheetName="rating_domestic">
                           <ui:ExcelReadCell.Result>
-                            <OutArgument x:TypeArguments="x:Double">[gradient]</OutArgument>
+                            <OutArgument x:TypeArguments="x:Double">[Gradient]</OutArgument>
                           </ui:ExcelReadCell.Result>
                         </ui:ExcelReadCell>
                         <ui:ExcelReadCell Cell="B2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_4" SheetName="rating_domestic">
                           <ui:ExcelReadCell.Result>
-                            <OutArgument x:TypeArguments="x:Double">[rSquare]</OutArgument>
+                            <OutArgument x:TypeArguments="x:Double">[RSquare]</OutArgument>
                           </ui:ExcelReadCell.Result>
                         </ui:ExcelReadCell>
                       </Sequence>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,928" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                      <Sequence DisplayName="Adding Trendline" sap:VirtualizedContainerService.HintSize="376,928" sap2010:WorkflowViewState.IdRef="Sequence_70">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -452,7 +456,7 @@
                           </ui:Click.Target>
                         </ui:Click>
                       </Sequence>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,545" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                      <Sequence DisplayName="Writing to Docs" sap:VirtualizedContainerService.HintSize="376,545" sap2010:WorkflowViewState.IdRef="Sequence_74">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -488,8 +492,12 @@
                         </ui:SendHotkey>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke WriteInsightsToDoc workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="graphs\WriteInsightsToDoc.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:Double" x:Key="gradient">[gradient]</InArgument>
-                            <InArgument x:TypeArguments="x:Double" x:Key="rSquare">[rSquare]</InArgument>
+                            <InArgument x:TypeArguments="x:Double" x:Key="in_Gradient">
+                              <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="Gradient" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:Double" x:Key="in_RSquare">
+                              <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="RSquare" />
+                            </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -499,7 +507,7 @@
               </ui:WindowScope.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -510,7 +518,7 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Budget-Rating" sap:VirtualizedContainerService.HintSize="460,2495" sap2010:WorkflowViewState.IdRef="Sequence_84">
+                  <Sequence DisplayName="Get International Ratings" sap:VirtualizedContainerService.HintSize="460,2495" sap2010:WorkflowViewState.IdRef="Sequence_84">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -524,7 +532,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,758" sap2010:WorkflowViewState.IdRef="Sequence_77">
+                      <Sequence DisplayName="Calculating Insights" sap:VirtualizedContainerService.HintSize="376,758" sap2010:WorkflowViewState.IdRef="Sequence_77">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -537,16 +545,16 @@
                         <ui:ExcelWriteCell Cell="B2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12" SheetName="rating_international" Text="=RSQ(details!E1:E26,details!B1:B26)" />
                         <ui:ExcelReadCell Cell="B1" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_5" SheetName="rating_international">
                           <ui:ExcelReadCell.Result>
-                            <OutArgument x:TypeArguments="x:Double">[gradient]</OutArgument>
+                            <OutArgument x:TypeArguments="x:Double">[Gradient]</OutArgument>
                           </ui:ExcelReadCell.Result>
                         </ui:ExcelReadCell>
                         <ui:ExcelReadCell Cell="B2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_6" SheetName="rating_international">
                           <ui:ExcelReadCell.Result>
-                            <OutArgument x:TypeArguments="x:Double">[rSquare]</OutArgument>
+                            <OutArgument x:TypeArguments="x:Double">[RSquare]</OutArgument>
                           </ui:ExcelReadCell.Result>
                         </ui:ExcelReadCell>
                       </Sequence>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,928" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                      <Sequence DisplayName="Adding Trendline" sap:VirtualizedContainerService.HintSize="376,928" sap2010:WorkflowViewState.IdRef="Sequence_78">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -651,7 +659,7 @@
                           </ui:Click.Target>
                         </ui:Click>
                       </Sequence>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,545" sap2010:WorkflowViewState.IdRef="Sequence_82">
+                      <Sequence DisplayName="Writing to Docs" sap:VirtualizedContainerService.HintSize="376,545" sap2010:WorkflowViewState.IdRef="Sequence_82">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -687,8 +695,12 @@
                         </ui:SendHotkey>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke WriteInsightsToDoc workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="graphs\WriteInsightsToDoc.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:Double" x:Key="gradient">[gradient]</InArgument>
-                            <InArgument x:TypeArguments="x:Double" x:Key="rSquare">[rSquare]</InArgument>
+                            <InArgument x:TypeArguments="x:Double" x:Key="in_Gradient">
+                              <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="Gradient" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:Double" x:Key="in_RSquare">
+                              <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="RSquare" />
+                            </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -698,7 +710,7 @@
               </ui:WindowScope.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -709,7 +721,7 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Budget-Rating" sap:VirtualizedContainerService.HintSize="460,2495" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                  <Sequence DisplayName="Get Worldwide Ratings" sap:VirtualizedContainerService.HintSize="460,2495" sap2010:WorkflowViewState.IdRef="Sequence_92">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -723,7 +735,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,758" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                      <Sequence DisplayName="Calculating Insights" sap:VirtualizedContainerService.HintSize="376,758" sap2010:WorkflowViewState.IdRef="Sequence_85">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -736,16 +748,16 @@
                         <ui:ExcelWriteCell Cell="B2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_16" SheetName="rating_worldwide" Text="=RSQ(details!F1:F26,details!B1:B26)" />
                         <ui:ExcelReadCell Cell="B1" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_7" SheetName="rating_worldwide">
                           <ui:ExcelReadCell.Result>
-                            <OutArgument x:TypeArguments="x:Double">[gradient]</OutArgument>
+                            <OutArgument x:TypeArguments="x:Double">[Gradient]</OutArgument>
                           </ui:ExcelReadCell.Result>
                         </ui:ExcelReadCell>
                         <ui:ExcelReadCell Cell="B2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_8" SheetName="rating_international">
                           <ui:ExcelReadCell.Result>
-                            <OutArgument x:TypeArguments="x:Double">[rSquare]</OutArgument>
+                            <OutArgument x:TypeArguments="x:Double">[RSquare]</OutArgument>
                           </ui:ExcelReadCell.Result>
                         </ui:ExcelReadCell>
                       </Sequence>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,928" sap2010:WorkflowViewState.IdRef="Sequence_86">
+                      <Sequence DisplayName="Adding Trendline" sap:VirtualizedContainerService.HintSize="376,928" sap2010:WorkflowViewState.IdRef="Sequence_86">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -850,7 +862,7 @@
                           </ui:Click.Target>
                         </ui:Click>
                       </Sequence>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,545" sap2010:WorkflowViewState.IdRef="Sequence_90">
+                      <Sequence DisplayName="Writing to Docs" sap:VirtualizedContainerService.HintSize="376,545" sap2010:WorkflowViewState.IdRef="Sequence_90">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -886,8 +898,12 @@
                         </ui:SendHotkey>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke WriteInsightsToDoc workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="graphs\WriteInsightsToDoc.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:Double" x:Key="gradient">[gradient]</InArgument>
-                            <InArgument x:TypeArguments="x:Double" x:Key="rSquare">[rSquare]</InArgument>
+                            <InArgument x:TypeArguments="x:Double" x:Key="in_Gradient">
+                              <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="Gradient" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:Double" x:Key="in_RSquare">
+                              <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="RSquare" />
+                            </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
