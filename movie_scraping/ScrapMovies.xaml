@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,1908</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1756,2672</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>movie_data_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -88,7 +88,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="movie_data" sap:VirtualizedContainerService.HintSize="949,1843" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="movie_data" sap:VirtualizedContainerService.HintSize="999,2607" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractMovieData" />
       <Variable x:TypeArguments="x:String" Name="DisplayMovieData" />
@@ -99,7 +99,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="907,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="957,169" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Scraping 50 movies from IMDB, there is also a check to make sure that the bot isnt scraping more than the required amount of movies from IMDB, activity also handles passing in the filters such as the rating etc, through query params to the url when browser is opened." />
+    <Assign sap:VirtualizedContainerService.HintSize="957,60" sap2010:WorkflowViewState.IdRef="Assign_8">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[StartingDate]</OutArgument>
       </Assign.To>
@@ -107,7 +108,7 @@
         <InArgument x:TypeArguments="x:String">[DateTime.Now.AddYears(-in_TimeRangeInYears).ToString("yyyy-MM-dd")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="907,116" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="[String.Format(&quot;https://www.imdb.com/search/title/?title_type=feature,tv_movie,tv_special,short&amp;release_date={0},&amp;user_rating=7.5,10.0&amp;num_votes=50000,&amp;genres=action&amp;sort=user_rating,desc&amp;start={1}&amp;ref_=adv_nxt&quot;, StartingDate, in_MovieIndex.ToString())]">
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="957,116" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="[String.Format(&quot;https://www.imdb.com/search/title/?title_type=feature,tv_movie,tv_special,short&amp;release_date={0},&amp;user_rating=7.5,10.0&amp;num_votes=50000,&amp;genres=action&amp;sort=user_rating,desc&amp;start={1}&amp;ref_=adv_nxt&quot;, StartingDate, in_MovieIndex.ToString())]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -116,7 +117,17 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="907,1495" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="957,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
+          <Literal x:TypeArguments="x:String">Opening up imdb browser browser to scrape movie names and ratings</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="957,1898" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="TotalSentence" />
         <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="Matches" />
@@ -127,25 +138,25 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'FeatureFi Page'" sap:VirtualizedContainerService.HintSize="865,1403" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="5476825077511c21ac639da3c3dc4191" Selector="&lt;html app='msedge.exe' title='* (Sorted by *) - IMDb' /&gt;">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'FeatureFi Page'" sap:VirtualizedContainerService.HintSize="915,1806" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="5476825077511c21ac639da3c3dc4191" Selector="&lt;html app='msedge.exe' title='* (Sorted by *) - IMDb' /&gt;">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="831,1257" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <Sequence sap:VirtualizedContainerService.HintSize="881,1660" sap2010:WorkflowViewState.IdRef="Sequence_15">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap:VirtualizedContainerService.HintSize="789,397" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence sap:VirtualizedContainerService.HintSize="839,454" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                <ui:GetValue ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="scraping the number for the number of movies scraped from the page.&#xD;&#xA;" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,163" sap2010:WorkflowViewState.IdRef="GetValue_1">
                   <ui:GetValue.Target>
                     <ui:Target Element="{x:Null}" Id="8d16266a-e3ef-4ecf-8f04-19c94db323be" InformativeScreenshot="53a459467fabb01721f761d122dfb473" Selector="&lt;webctrl parentid='main' tag='DIV' /&gt;">
                       <ui:Target.ClippingRegion>
@@ -162,6 +173,11 @@
                   <ui:GetValue.Value>
                     <OutArgument x:TypeArguments="x:String">[TotalSentence]</OutArgument>
                   </ui:GetValue.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </ui:GetValue>
                 <ui:Matches BuilderPattern=" (\d+|\d+[,\d+]*\d+) " DisplayName="Matches" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[TotalSentence]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot; (\\d+|\\d+[,\\d+]*\\d+) &quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern=" (\d+|\d+[,\d+]*\d+) " RegexOption="IgnoreCase, Compiled" Result="[Matches]" />
                 <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_7">
@@ -173,9 +189,14 @@
                   </Assign.Value>
                 </Assign>
               </Sequence>
-              <If Condition="[in_MovieIndex &lt; TotalMovies]" sap:VirtualizedContainerService.HintSize="789,728" sap2010:WorkflowViewState.IdRef="If_2">
+              <If sap2010:Annotation.AnnotationText="Checks the current scraping index, if the current index is higher than the total movies returned from the filtered search then there are no more movies to scrape." Condition="[in_MovieIndex &lt; TotalMovies]" sap:VirtualizedContainerService.HintSize="839,1074" sap2010:WorkflowViewState.IdRef="If_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="418,571" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence sap:VirtualizedContainerService.HintSize="418,875" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -197,7 +218,27 @@
                         </ui:ExtractData.Target>
                       </ui:ExtractData>
                     </Sequence>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Scraped data for &quot; + out_MovieRanking.RowCount.ToString() +  &quot; movies from IMDB filtered search successfully.&quot;" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
+                        </InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
                     <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
+                          <Literal x:TypeArguments="x:String">Closing browser</Literal>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
+                        </InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
                     <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                       <Assign.To>
                         <OutArgument x:TypeArguments="sd:DataTable">[out_MovieRanking]</OutArgument>
@@ -210,7 +251,7 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="326,333" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,485" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="EmptyTable" />
                     </Sequence.Variables>
@@ -219,7 +260,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="284,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                       <Assign.To>
                         <OutArgument x:TypeArguments="sd:DataTable">[out_MovieRanking]</OutArgument>
                       </Assign.To>
@@ -227,8 +268,18 @@
                         <InArgument x:TypeArguments="sd:DataTable">[New DataTable()]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:OutputDataTable DataTable="[out_MovieRanking]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" Text="[DisplayMovieData]" />
-                    <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="284,22" sap2010:WorkflowViewState.IdRef="CloseTab_2" />
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Log\InfoLogger.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
+                          <Literal x:TypeArguments="x:String">No more movies to scrape from IMDB</Literal>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_LogFile">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
+                        </InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <ui:OutputDataTable DataTable="[out_MovieRanking]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" Text="[DisplayMovieData]" />
+                    <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="CloseTab_2" />
                   </Sequence>
                 </If.Else>
               </If>
