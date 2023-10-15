@@ -1,7 +1,7 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="dollar2int" this:dollar2int.Dollar="[Nothing]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="dollar2int" this:dollar2int.in_Dollar="[Nothing]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="Dollar" Type="InArgument(x:String)" />
-    <x:Property Name="IntValue" Type="OutArgument(x:Int64)" />
+    <x:Property Name="in_Dollar" Type="InArgument(x:String)" />
+    <x:Property Name="out_IntValue" Type="OutArgument(x:Int64)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -66,7 +66,6 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="dollar2int" sap:VirtualizedContainerService.HintSize="867,874" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -76,7 +75,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:Comment sap:VirtualizedContainerService.HintSize="825,170" sap2010:WorkflowViewState.IdRef="Comment_1" Text="This workflow converts formatted dollar text into its corresponding dollar amount as an integer. If input dollar is invalid or missing, '-1' is returned.&#xA;&#xA;&#xA;An example of an input dollar text is: '$1,300' which will be converted to 1300" />
-    <If Condition="[Dollar is Nothing]" sap:VirtualizedContainerService.HintSize="825,572" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[in_Dollar is Nothing]" sap:VirtualizedContainerService.HintSize="825,572" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -86,7 +85,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
-              <OutArgument x:TypeArguments="x:Int64">[IntValue]</OutArgument>
+              <OutArgument x:TypeArguments="x:Int64">[out_IntValue]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:Int64">-1</InArgument>
@@ -110,8 +109,8 @@
             <TryCatch.Try>
               <ui:InvokeCode Code="Dollar = System.Text.RegularExpressions.Regex.Replace(Dollar, &quot;[$,]&quot;, &quot;&quot;)&#xA;IntValue = CLng(Dollar)" ContinueOnError="False" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
                 <ui:InvokeCode.Arguments>
-                  <InOutArgument x:TypeArguments="x:Int64" x:Key="IntValue">[IntValue]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="Dollar">[Dollar]</InOutArgument>
+                  <InOutArgument x:TypeArguments="x:Int64" x:Key="IntValue">[out_IntValue]</InOutArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="Dollar">[in_Dollar]</InOutArgument>
                 </ui:InvokeCode.Arguments>
               </ui:InvokeCode>
             </TryCatch.Try>
@@ -129,7 +128,7 @@
                   </ActivityAction.Argument>
                   <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Int64">[IntValue]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Int64">[out_IntValue]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:Int64">-1</InArgument>

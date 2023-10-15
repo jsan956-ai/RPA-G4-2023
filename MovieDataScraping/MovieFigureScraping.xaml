@@ -1,11 +1,11 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="movie_figure_scraping" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="FigureTexts" Type="OutArgument(s:String[])" />
+    <x:Property Name="out_FigureTexts" Type="OutArgument(s:String[])" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,2341</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1360</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>movie_figure_scraping_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -74,10 +74,10 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="476,189" sap2010:WorkflowViewState.IdRef="Comment_1" Text="This workflow obtains the movie data on the movie detail page in the BoxOfficeMojo website. The data contains budget, domestic revenue, international revenue and worldwide revenue and is returned as a String array.&#xD;&#xA;&#xD;&#xA;If some data is not available in the website, they are represented as Nothing." />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="476,189" sap2010:WorkflowViewState.IdRef="Comment_1" Text="This workflow obtains the movie data on the movie detail page in the BoxOfficeMojo website. The data contains budget, domestic revenue, international revenue and worldwide revenue and is returned as a String array.&#xA;&#xA;If some data is not available in the website, they are represented as Nothing." />
     <Assign sap:VirtualizedContainerService.HintSize="476,60" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
-        <OutArgument x:TypeArguments="s:String[]">[FigureTexts]</OutArgument>
+        <OutArgument x:TypeArguments="s:String[]">[out_FigureTexts]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="s:String[]">[new String(3) {}]</InArgument>
@@ -112,7 +112,7 @@
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="43c5db5e-3daa-464a-81e8-9bffdab6746e" InformativeScreenshot="d61faa5fe288d4a1bb14016e845f4fde" Selector="&lt;html app='msedge.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl aaname='Budget' parentid='a-page' tag='SPAN' /&gt;&lt;nav up='1' /&gt;&lt;webctrl parentid='a-page' tag='SPAN' idx='3' /&gt;" TimeoutMS="3000" WaitForReady="COMPLETE" />
                 </ui:GetValue.Target>
                 <ui:GetValue.Value>
-                  <OutArgument x:TypeArguments="x:String">[FigureTexts(0)]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[out_FigureTexts(0)]</OutArgument>
                 </ui:GetValue.Value>
               </ui:GetValue>
               <ui:GetValue ContinueOnError="True" DisplayName="Get domestic revenue data" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
@@ -120,7 +120,7 @@
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="43c5db5e-3daa-464a-81e8-9bffdab6746e" InformativeScreenshot="83db4967b611bce737569019825082c7" Selector="&lt;html app='msedge.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='SPAN' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' class='a-size-medium a-text-bold' idx='1' /&gt;" TimeoutMS="3000" WaitForReady="COMPLETE" />
                 </ui:GetValue.Target>
                 <ui:GetValue.Value>
-                  <OutArgument x:TypeArguments="x:String">[FigureTexts(1)]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[out_FigureTexts(1)]</OutArgument>
                 </ui:GetValue.Value>
               </ui:GetValue>
               <ui:GetValue ContinueOnError="True" DisplayName="Get international revenue data" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
@@ -128,7 +128,7 @@
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="63af11ae-3ade-459b-acc4-e7f39a41cfaf" InformativeScreenshot="45b11297b709c555dbf6bec063d48413" Selector="&lt;html app='msedge.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='SPAN' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' class='a-size-medium a-text-bold' idx='2' /&gt;" TimeoutMS="3000" WaitForReady="COMPLETE" />
                 </ui:GetValue.Target>
                 <ui:GetValue.Value>
-                  <OutArgument x:TypeArguments="x:String">[FigureTexts(2)]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[out_FigureTexts(2)]</OutArgument>
                 </ui:GetValue.Value>
               </ui:GetValue>
               <ui:GetValue ContinueOnError="True" DisplayName="Get worldwide revenue data" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
@@ -136,7 +136,7 @@
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6bcaa6b6-4df9-4839-acc5-04a0ad508380" InformativeScreenshot="12f1d37e30e758c74582a6c3bb35e56f" Selector="&lt;html app='msedge.exe' title='* - Box Office Mojo' /&gt;&lt;webctrl parentid='a-page' tag='SPAN' css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' class='a-size-medium a-text-bold' idx='3' /&gt;" TimeoutMS="3000" WaitForReady="COMPLETE" />
                 </ui:GetValue.Target>
                 <ui:GetValue.Value>
-                  <OutArgument x:TypeArguments="x:String">[FigureTexts(3)]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[out_FigureTexts(3)]</OutArgument>
                 </ui:GetValue.Value>
               </ui:GetValue>
             </Sequence>

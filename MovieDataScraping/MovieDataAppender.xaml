@@ -1,11 +1,11 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Insert_Movie_Data" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="OutputMovies" Type="InOutArgument(sd:DataTable)" />
-    <x:Property Name="Figures" Type="InArgument(s:Object[])" />
-    <x:Property Name="MovieName" Type="InArgument(x:String)" />
-    <x:Property Name="MovieRating" Type="InArgument(x:Double)" />
+    <x:Property Name="io_OutputMovies" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="in_Figures" Type="InArgument(s:Object[])" />
+    <x:Property Name="in_MovieName" Type="InArgument(x:String)" />
+    <x:Property Name="in_MovieRating" Type="InArgument(x:Double)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1240,880</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,785</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -73,14 +73,14 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Append Movie Data" sap:VirtualizedContainerService.HintSize="526,815" sap2010:WorkflowViewState.IdRef="Sequence_14">
+  <Sequence DisplayName="Append Movie Data" sap:VirtualizedContainerService.HintSize="526,720" sap2010:WorkflowViewState.IdRef="Sequence_14">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:Comment sap:VirtualizedContainerService.HintSize="484,93" sap2010:WorkflowViewState.IdRef="Comment_1" Text="This workflow appends the movie data into a datatable if it is valid. For example, a movie is not valid if its budget is shown '#N/A'." />
-    <If sap2010:Annotation.AnnotationText="If movie data is valid, the data will be written to the output datatable" Condition="[Not Figures(0).Equals(&quot;#N/A&quot;)]" sap:VirtualizedContainerService.HintSize="484,590" sap2010:WorkflowViewState.IdRef="If_3">
+    <If sap2010:Annotation.AnnotationText="If movie data is valid, the data will be written to the output datatable" Condition="[Not in_Figures(0).Equals(&quot;#N/A&quot;)]" sap:VirtualizedContainerService.HintSize="484,495" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -88,13 +88,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,372" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,277" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{MovieName, MovieRating, Figures(0), Figures(1), Figures(2), Figures(3)}]" DataTable="[OutputMovies]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_MovieName, in_MovieRating, in_Figures(0), in_Figures(1), in_Figures(2), in_Figures(3)}]" DataTable="[io_OutputMovies]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
         </Sequence>
       </If.Then>
       <If.Else>

@@ -1,7 +1,7 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="revenue_scraping" this:revenue_scraping.MovieName="Barbie" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="revenue_scraping" this:revenue_scraping.in_MovieName="Barbie" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="MovieName" Type="InArgument(x:String)" />
-    <x:Property Name="Figures" Type="OutArgument(s:Object[])" />
+    <x:Property Name="in_MovieName" Type="InArgument(x:String)" />
+    <x:Property Name="out_Figures" Type="OutArgument(s:Object[])" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -92,34 +92,36 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="366,208" sap2010:WorkflowViewState.IdRef="Comment_1" Text="This workflow searches the movie specified by the exact name on the BoxOfficeMojo website and scrap the movie data. The data contains budget, domestic revenue, international revenue and worldwide revenue and is returned as a String array.&#xD;&#xA;&#xD;&#xA;If some data is not available in the website, they are represented as '#N/A'." />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="366,208" sap2010:WorkflowViewState.IdRef="Comment_1" Text="This workflow searches the movie specified by the exact name on the BoxOfficeMojo website and scrap the movie data. The data contains budget, domestic revenue, international revenue and worldwide revenue and is returned as a String array.&#xA;&#xA;If some data is not available in the website, they are represented as '#N/A'." />
     <Assign sap:VirtualizedContainerService.HintSize="366,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
-        <OutArgument x:TypeArguments="s:Object[]">[Figures]</OutArgument>
+        <OutArgument x:TypeArguments="s:Object[]">[out_Figures]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="s:Object[]">[new Object(3) {}]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="366,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="revenue_scraping\navigate_to_movie_detail.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="366,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="MovieDataScraping\NavigateToMovieDetail.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="MovieName">[MovieName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_MovieName">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_MovieName" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="366,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="revenue_scraping\movie_figure_scraping.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="366,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="MovieDataScraping\MovieFigureScraping.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="s:String[]" x:Key="FigureTexts">
+        <OutArgument x:TypeArguments="s:String[]" x:Key="out_FigureTexts">
           <mva:VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="FigureTexts" />
         </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="366,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="revenue_scraping\postprocess_figures.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="366,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="MovieDataScraping\PostprocessFigures.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="s:String[]" x:Key="FigureTexts">
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_FigureTexts">
           <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="FigureTexts" />
         </InArgument>
-        <OutArgument x:TypeArguments="s:Object[]" x:Key="FigureRepresentation">
-          <mva:VisualBasicReference x:TypeArguments="s:Object[]" ExpressionText="Figures" />
+        <OutArgument x:TypeArguments="s:Object[]" x:Key="out_FigureRepresentation">
+          <mva:VisualBasicReference x:TypeArguments="s:Object[]" ExpressionText="out_Figures" />
         </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
