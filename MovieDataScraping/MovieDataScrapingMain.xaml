@@ -152,7 +152,7 @@
                   <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="DirectCast(Movie.Item(&quot;Movie Title&quot;), String)" />
                 </InArgument>
                 <InArgument x:TypeArguments="x:Double" x:Key="in_MovieRating">
-                  <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="DirectCast(Movie.Item(&quot;Movie Rating&quot;), Double)" />
+                  <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="CDbl(DirectCast(Movie.Item(&quot;Movie Rating&quot;), String))" />
                 </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>

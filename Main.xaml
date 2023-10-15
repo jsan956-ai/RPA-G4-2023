@@ -71,16 +71,13 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap:VirtualizedContainerService.HintSize="604,1903" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="ScrappedMovies" />
-      <Variable x:TypeArguments="x:Int32" Name="StillNeededMovieCount">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_NeededMovieCount" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="[in_NeededMovieCount]" Name="StillNeededMovieCount" />
       <Variable x:TypeArguments="x:Int32" Default="1" Name="MovieNextIndex" />
       <Variable x:TypeArguments="x:Boolean" Default="True" Name="HasMoviesToScrap" />
       <Variable x:TypeArguments="sd:DataTable" Default="[new DataTable()]" Name="MoviesOutput" />
