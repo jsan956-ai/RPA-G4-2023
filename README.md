@@ -16,6 +16,9 @@ From IMDb, the top 25 action movies from the last 20 years that have over 50,000
 * Microsoft Excel
 * Microsoft Word
 
+All UIPath Studio project dependencies and packages must be the same version as the following image:
+![image](https://github.com/jsan956-ai/RPA-G4-2023/assets/79774110/83c250d4-f558-4f4c-b764-64902287401b)
+
 If you do not have a UiPath Studio Academic license, sign up [here](https://www.boxofficemojo.com](https://www.uipath.com/rpa/academic-alliance/academic-studio-download) "Search the web").
 
 ## Installation
